@@ -32,7 +32,25 @@ function renderTimelineTree(containerId, structure, type) {
     const html = structure.map((item, index) => {
         const indent = '  '.repeat(item.level);
         const icon = getFileIcon(item.type);
-        const className = item.type + (item.duplicate ? ' duplicate-file' : ' new-file');
+        let className = item.type;
+        
+        // Add appropriate class based on file status
+        if (item.duplicate) {
+            if (item.problematic) {
+                // Apply problematic styling for severe issues
+                if (item.problematic === 'problematic') {
+                    className += ' problematic-file';
+                } else if (item.problematic === 'abandoned') {
+                    className += ' abandoned-file';
+                } else if (item.problematic === 'temp') {
+                    className += ' temp-file';
+                }
+            } else {
+                className += ' duplicate-file';
+            }
+        } else {
+            className += ' new-file';
+        }
         
         return `<div class="file-item ${className}" style="padding-left: ${item.level * 20}px;">
             <span class="file-icon">${icon}</span>
