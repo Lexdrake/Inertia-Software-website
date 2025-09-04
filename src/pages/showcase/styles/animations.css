@@ -1,5 +1,5 @@
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     flex-wrap: wrap;
 }
 
@@ -22,9 +22,11 @@
 
 .layout-buttons,
 .style-buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 320px;
 }
 
 .layout-btn,

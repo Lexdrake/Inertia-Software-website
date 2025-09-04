@@ -71,6 +71,9 @@ function initDesignPlayground() {
         document.querySelectorAll('.demo-nav').forEach(nav => {
             nav.style.borderRadius = borderRadius;
         });
+        
+        // Prevent navigation demo from jumping to page sections
+        initNavigationDemo();
     }
     
     function toggleDarkMode() {
@@ -447,3 +450,24 @@ document.addEventListener('DOMContentLoaded', function() {
         chartObserver.observe(chartContainer);
     }
 });
+
+// Prevent navigation demo links from jumping to page sections
+function initNavigationDemo() {
+    // Handle navigation demo links to prevent page jumps
+    const navLinks = document.querySelectorAll('.demo-nav .nav-link, .demo-breadcrumb .breadcrumb-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Toggle active state for navigation demo
+            if (link.classList.contains('nav-link')) {
+                const parentNav = link.closest('.demo-nav');
+                if (parentNav) {
+                    const siblingLinks = parentNav.querySelectorAll('.nav-link');
+                    siblingLinks.forEach(sibling => sibling.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            }
+        });
+    });
+}

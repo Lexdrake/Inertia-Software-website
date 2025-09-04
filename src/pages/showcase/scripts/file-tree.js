@@ -30,15 +30,7 @@ function initFileTreeDemo() {
         });
     }
     
-    function getFileIcon(type) {
-        const icons = {
-            folder: '📁',
-            file: '📄',
-            component: '⚛️',
-            config: '⚙️'
-        };
-        return icons[type] || '📄';
-    }
+    // Note: getFileIcon is now defined globally below
     
     // Handle demo button clicks
     demoButtons.forEach(btn => {
@@ -62,5 +54,16 @@ function initFileTreeDemo() {
     
     // Initialize with messy structure
     renderFileTree(fileStructures.messy);
+}
+
+// Global helper function for file icons (used by both file-tree and timeline)
+function getFileIcon(type) {
+    const icons = {
+        folder: '📁',
+        file: '📄',
+        component: '⚛️',
+        config: '⚙️'
+    };
+    return icons[type] || '📄';
 }
 
