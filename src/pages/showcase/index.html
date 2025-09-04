@@ -115,13 +115,13 @@
                             <label for="timelineSlider">Project Timeline:</label>
                             <input type="range" id="timelineSlider" min="0" max="6" value="0" step="1">
                             <div class="timeline-labels">
-                                <span>Month 1<br><small>(5 files)</small></span>
-                                <span>Month 2<br><small>(8 files)</small></span>
-                                <span>Month 4<br><small>(15 files)</small></span>
-                                <span>Month 6<br><small>(28 files)</small></span>
-                                <span>Month 9<br><small>(65 files)</small></span>
-                                <span>Month 12<br><small>(120 files)</small></span>
-                                <span>Month 18<br><small>(280+ files)</small></span>
+                                <span>Start</span>
+                                <span>Early</span>
+                                <span>Growing</span>
+                                <span>Expanding</span>
+                                <span>Scaling</span>
+                                <span>Mature</span>
+                                <span>Complex</span>
                             </div>
                         </div>
                     </div>
@@ -142,6 +142,10 @@
                                     <div class="metric duplicate-metric">
                                         <span class="metric-label">Duplicates:</span>
                                         <span class="metric-value" id="messyDuplicates">0</span>
+                                    </div>
+                                    <div class="metric problematic-metric">
+                                        <span class="metric-label">Problematic:</span>
+                                        <span class="metric-value" id="messyProblematic">0</span>
                                     </div>
                                 </div>
                             </div>
@@ -171,6 +175,10 @@
                                     <div class="metric">
                                         <span class="metric-label">Duplicates:</span>
                                         <span class="metric-value" id="organizedDuplicates">0</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Problematic:</span>
+                                        <span class="metric-value" id="organizedProblematic">0</span>
                                     </div>
                                 </div>
                             </div>

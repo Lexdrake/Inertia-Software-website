@@ -78,24 +78,30 @@ function updateMetrics(messyData, organizedData) {
     const messyFileCount = messyData.length - messyData.filter(item => item.type === 'folder').length;
     const messyMaxDepth = Math.max(...messyData.map(item => item.level));
     const messyDuplicates = messyData.filter(item => item.duplicate).length;
+    const messyProblematic = messyData.filter(item => item.problematic).length;
     
     // Calculate metrics for organized structure
     const organizedFileCount = organizedData.length - organizedData.filter(item => item.type === 'folder').length;
     const organizedMaxDepth = Math.max(...organizedData.map(item => item.level));
     const organizedDuplicates = organizedData.filter(item => item.duplicate).length;
+    const organizedProblematic = organizedData.filter(item => item.problematic).length;
     
     // Update UI
     document.getElementById('messyFileCount').textContent = messyFileCount;
     document.getElementById('messyDepth').textContent = messyMaxDepth;
     document.getElementById('messyDuplicates').textContent = messyDuplicates;
+    document.getElementById('messyProblematic').textContent = messyProblematic;
     
     document.getElementById('organizedFileCount').textContent = organizedFileCount;
     document.getElementById('organizedDepth').textContent = organizedMaxDepth;
     document.getElementById('organizedDuplicates').textContent = organizedDuplicates;
+    document.getElementById('organizedProblematic').textContent = organizedProblematic;
     
     // Highlight duplicate metrics if they exist
     const messyDuplicateMetric = document.querySelector('#messyDuplicates').closest('.metric');
     const organizedDuplicateMetric = document.querySelector('#organizedDuplicates').closest('.metric');
+    const messyProblematicMetric = document.querySelector('#messyProblematic').closest('.metric');
+    const organizedProblematicMetric = document.querySelector('#organizedProblematic').closest('.metric');
     
     if (messyDuplicates > 0) {
         messyDuplicateMetric.classList.add('has-duplicates');
@@ -107,6 +113,18 @@ function updateMetrics(messyData, organizedData) {
         organizedDuplicateMetric.classList.add('has-duplicates');
     } else {
         organizedDuplicateMetric.classList.remove('has-duplicates');
+    }
+    
+    if (messyProblematic > 0) {
+        messyProblematicMetric.classList.add('has-problematic');
+    } else {
+        messyProblematicMetric.classList.remove('has-problematic');
+    }
+    
+    if (organizedProblematic > 0) {
+        organizedProblematicMetric.classList.add('has-problematic');
+    } else {
+        organizedProblematicMetric.classList.remove('has-problematic');
     }
     
     // Animate metric updates

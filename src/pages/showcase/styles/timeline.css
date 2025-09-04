@@ -126,9 +126,22 @@
     animation: duplicateWarning 1s ease-in-out;
 }
 
+.problematic-metric .metric-value {
+    color: #ff9800;
+}
+
+.problematic-metric.has-problematic .metric-value {
+    animation: problematicWarning 1s ease-in-out;
+}
+
 @keyframes duplicateWarning {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.2); color: #ff4444; }
+}
+
+@keyframes problematicWarning {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); color: #ff6600; }
 }
 
 .comparison-divider {
@@ -157,7 +170,34 @@
 
 .messy-tree .file-tree,
 .organized-tree .file-tree {
-    min-height: 300px;
+    height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+}
+
+/* Custom scrollbar styling */
+.messy-tree .file-tree::-webkit-scrollbar,
+.organized-tree .file-tree::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messy-tree .file-tree::-webkit-scrollbar-track,
+.organized-tree .file-tree::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.messy-tree .file-tree::-webkit-scrollbar-thumb,
+.organized-tree .file-tree::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.messy-tree .file-tree::-webkit-scrollbar-thumb:hover,
+.organized-tree .file-tree::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 /* File highlighting for timeline */
