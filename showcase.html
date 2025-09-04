@@ -100,11 +100,85 @@
                 <div class="demo-controls">
                     <button class="demo-btn active" data-architecture="messy">Messy Structure</button>
                     <button class="demo-btn" data-architecture="organized">Our Approach</button>
+                    <button class="demo-btn" data-architecture="timeline">Timeline Comparison</button>
                 </div>
                 
-                <div class="file-tree-container">
+                <div class="file-tree-container" id="singleTreeView">
                     <div class="file-tree" id="fileTree">
                         <!-- File tree will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="timeline-comparison-container" id="timelineView" style="display: none;">
+                    <div class="comparison-header">
+                        <div class="timeline-controls">
+                            <label for="timelineSlider">Project Timeline:</label>
+                            <input type="range" id="timelineSlider" min="0" max="5" value="0" step="1">
+                            <div class="timeline-labels">
+                                <span>Start</span>
+                                <span>Early</span>
+                                <span>Growing</span>
+                                <span>Expanding</span>
+                                <span>Mature</span>
+                                <span>Complex</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-view">
+                        <div class="comparison-side">
+                            <div class="side-header">
+                                <h4>Unorganized Approach</h4>
+                                <div class="metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Files:</span>
+                                        <span class="metric-value" id="messyFileCount">5</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Max Depth:</span>
+                                        <span class="metric-value" id="messyDepth">1</span>
+                                    </div>
+                                    <div class="metric duplicate-metric">
+                                        <span class="metric-label">Duplicates:</span>
+                                        <span class="metric-value" id="messyDuplicates">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="file-tree-container messy-tree">
+                                <div class="file-tree" id="messyTimelineTree">
+                                    <!-- Messy tree timeline -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-divider">
+                            <div class="vs-badge">VS</div>
+                        </div>
+                        
+                        <div class="comparison-side">
+                            <div class="side-header">
+                                <h4>Our Organized Approach</h4>
+                                <div class="metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">Files:</span>
+                                        <span class="metric-value" id="organizedFileCount">5</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Max Depth:</span>
+                                        <span class="metric-value" id="organizedDepth">3</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">Duplicates:</span>
+                                        <span class="metric-value" id="organizedDuplicates">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="file-tree-container organized-tree">
+                                <div class="file-tree" id="organizedTimelineTree">
+                                    <!-- Organized tree timeline -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -150,20 +224,154 @@
                         <input type="range" id="borderRadius" min="0" max="20" value="8">
                         <span id="borderRadiusValue">8px</span>
                     </div>
+                    <div class="control-group">
+                        <label>Shadow Intensity</label>
+                        <input type="range" id="shadowIntensity" min="0" max="10" value="4">
+                        <span id="shadowIntensityValue">4</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Dark Mode</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="darkModeToggle">
+                            <label for="darkModeToggle" class="toggle-label"></label>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="component-showcase">
-                    <div class="showcase-components">
-                        <button class="demo-button">Primary Button</button>
-                        <div class="demo-card">
-                            <h3>Card Component</h3>
-                            <p>This card adapts to your design system changes in real-time.</p>
+                <div class="component-picker">
+                    <div class="picker-tabs">
+                        <button class="picker-tab active" data-component="buttons">Buttons</button>
+                        <button class="picker-tab" data-component="cards">Cards</button>
+                        <button class="picker-tab" data-component="forms">Forms</button>
+                        <button class="picker-tab" data-component="navigation">Navigation</button>
+                    </div>
+                    
+                    <div class="component-states">
+                        <div class="state-controls">
+                            <label>Component State:</label>
+                            <div class="state-buttons">
+                                <button class="state-btn active" data-state="normal">Normal</button>
+                                <button class="state-btn" data-state="hover">Hover</button>
+                                <button class="state-btn" data-state="active">Active</button>
+                                <button class="state-btn" data-state="disabled">Disabled</button>
+                            </div>
                         </div>
-                        <div class="demo-form">
-                            <input type="text" placeholder="Input field" class="demo-input">
-                            <div class="demo-checkbox-group">
-                                <input type="checkbox" id="demo-checkbox">
-                                <label for="demo-checkbox">Checkbox option</label>
+                    </div>
+                </div>
+                
+                <div class="component-showcase" id="componentShowcase">
+                    <!-- Buttons Component Set -->
+                    <div class="component-set" id="buttons-set">
+                        <div class="showcase-components">
+                            <button class="demo-button primary-btn" id="primaryBtn">Primary Button</button>
+                            <button class="demo-button secondary-btn" id="secondaryBtn">Secondary Button</button>
+                            <button class="demo-button outline-btn" id="outlineBtn">Outline Button</button>
+                            <button class="demo-button danger-btn" id="dangerBtn">Delete</button>
+                            <button class="demo-button icon-btn" id="iconBtn">
+                                <span class="btn-icon">⚡</span>
+                                Icon Button
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Cards Component Set -->
+                    <div class="component-set" id="cards-set" style="display: none;">
+                        <div class="showcase-components">
+                            <div class="demo-card simple-card" id="simpleCard">
+                                <h3>Simple Card</h3>
+                                <p>Basic card component with header and content.</p>
+                            </div>
+                            <div class="demo-card image-card" id="imageCard">
+                                <div class="card-image"></div>
+                                <div class="card-content">
+                                    <h3>Image Card</h3>
+                                    <p>Card with image and content area.</p>
+                                    <button class="card-action">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="demo-card stats-card" id="statsCard">
+                                <div class="card-header">
+                                    <h3>Statistics</h3>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <div class="stat-value">2,847</div>
+                                        <div class="stat-label">Users</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">96.2%</div>
+                                        <div class="stat-label">Uptime</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Forms Component Set -->
+                    <div class="component-set" id="forms-set" style="display: none;">
+                        <div class="showcase-components">
+                            <div class="demo-form">
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" placeholder="Enter your email" class="demo-input" id="emailInput">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" placeholder="Enter password" class="demo-input" id="passwordInput">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Message</label>
+                                    <textarea placeholder="Your message..." class="demo-textarea" id="messageTextarea"></textarea>
+                                </div>
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="agreeCheckbox" class="demo-checkbox">
+                                    <label for="agreeCheckbox" class="checkbox-label">I agree to the terms</label>
+                                </div>
+                                <div class="form-group">
+                                    <select class="demo-select" id="countrySelect">
+                                        <option>Select Country</option>
+                                        <option>United States</option>
+                                        <option>Canada</option>
+                                        <option>United Kingdom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Component Set -->
+                    <div class="component-set" id="navigation-set" style="display: none;">
+                        <div class="showcase-components">
+                            <nav class="demo-nav horizontal-nav" id="horizontalNav">
+                                <a href="#" class="nav-link active">Home</a>
+                                <a href="#" class="nav-link">About</a>
+                                <a href="#" class="nav-link">Services</a>
+                                <a href="#" class="nav-link">Contact</a>
+                            </nav>
+                            <nav class="demo-nav vertical-nav" id="verticalNav">
+                                <a href="#" class="nav-link">
+                                    <span class="nav-icon">🏠</span>
+                                    Dashboard
+                                </a>
+                                <a href="#" class="nav-link">
+                                    <span class="nav-icon">👤</span>
+                                    Profile
+                                </a>
+                                <a href="#" class="nav-link active">
+                                    <span class="nav-icon">⚙️</span>
+                                    Settings
+                                </a>
+                                <a href="#" class="nav-link">
+                                    <span class="nav-icon">📊</span>
+                                    Analytics
+                                </a>
+                            </nav>
+                            <div class="demo-breadcrumb" id="demoBreadcrumb">
+                                <a href="#" class="breadcrumb-link">Home</a>
+                                <span class="breadcrumb-separator">/</span>
+                                <a href="#" class="breadcrumb-link">Projects</a>
+                                <span class="breadcrumb-separator">/</span>
+                                <span class="breadcrumb-current">Website Redesign</span>
                             </div>
                         </div>
                     </div>
@@ -177,50 +385,136 @@
         <div class="container">
             <div class="section-header">
                 <h2>Style Adaptation Mastery</h2>
-                <p>Watch the same component transform across different design languages</p>
+                <p>Watch the same components transform across different layouts and design languages</p>
             </div>
             
             <div class="adaptation-demo">
-                <div class="style-selector">
-                    <button class="style-btn active" data-style="modern">Modern</button>
-                    <button class="style-btn" data-style="corporate">Corporate</button>
-                    <button class="style-btn" data-style="playful">Playful</button>
-                    <button class="style-btn" data-style="minimal">Minimal</button>
+                <div class="adaptation-controls">
+                    <div class="layout-selector">
+                        <label>Layout Type:</label>
+                        <div class="layout-buttons">
+                            <button class="layout-btn active" data-layout="dashboard">Dashboard</button>
+                            <button class="layout-btn" data-layout="landing">Landing Page</button>
+                            <button class="layout-btn" data-layout="product">Product Page</button>
+                            <button class="layout-btn" data-layout="contact">Contact Page</button>
+                        </div>
+                    </div>
+                    
+                    <div class="style-selector">
+                        <label>Design Style:</label>
+                        <div class="style-buttons">
+                            <button class="style-btn active" data-style="modern">Modern</button>
+                            <button class="style-btn" data-style="corporate">Corporate</button>
+                            <button class="style-btn" data-style="playful">Playful</button>
+                            <button class="style-btn" data-style="minimal">Minimal</button>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="adaptation-preview">
                     <div class="preview-component" id="adaptiveComponent">
-                        <div class="component-header">
-                            <h3>Product Dashboard</h3>
-                            <button class="component-button">Get Started</button>
+                        <!-- Dashboard Layout -->
+                        <div class="layout-content dashboard-layout" id="dashboard-layout">
+                            <div class="component-header">
+                                <h3>Analytics Dashboard</h3>
+                                <button class="component-button">View Details</button>
+                            </div>
+                            <div class="component-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">2,847</div>
+                                    <div class="stat-label">Active Users</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">96.2%</div>
+                                    <div class="stat-label">Uptime</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">$45K</div>
+                                    <div class="stat-label">Revenue</div>
+                                </div>
+                            </div>
+                            <div class="component-chart">
+                                <div class="chart-bar" style="height: 60%"></div>
+                                <div class="chart-bar" style="height: 80%"></div>
+                                <div class="chart-bar" style="height: 45%"></div>
+                                <div class="chart-bar" style="height: 90%"></div>
+                                <div class="chart-bar" style="height: 70%"></div>
+                            </div>
                         </div>
-                        <div class="component-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">2,847</div>
-                                <div class="stat-label">Active Users</div>
+                        
+                        <!-- Landing Page Layout -->
+                        <div class="layout-content landing-layout" id="landing-layout" style="display: none;">
+                            <div class="hero-section">
+                                <h3>Transform Your Business</h3>
+                                <p>Powerful tools to help you grow and succeed in today's competitive market.</p>
+                                <button class="component-button">Start Free Trial</button>
                             </div>
-                            <div class="stat-item">
-                                <div class="stat-number">96.2%</div>
-                                <div class="stat-label">Satisfaction</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">$45K</div>
-                                <div class="stat-label">Revenue</div>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">⚡</div>
+                                    <h4>Fast Setup</h4>
+                                    <p>Get started in minutes</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">🛡️</div>
+                                    <h4>Secure</h4>
+                                    <p>Enterprise-grade security</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">📈</div>
+                                    <h4>Analytics</h4>
+                                    <p>Real-time insights</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="component-chart">
-                            <div class="chart-bar" style="height: 60%"></div>
-                            <div class="chart-bar" style="height: 80%"></div>
-                            <div class="chart-bar" style="height: 45%"></div>
-                            <div class="chart-bar" style="height: 90%"></div>
-                            <div class="chart-bar" style="height: 70%"></div>
+                        
+                        <!-- Product Page Layout -->
+                        <div class="layout-content product-layout" id="product-layout" style="display: none;">
+                            <div class="product-showcase">
+                                <div class="product-image">
+                                    <div class="image-placeholder">📱</div>
+                                </div>
+                                <div class="product-info">
+                                    <h3>Professional Plan</h3>
+                                    <div class="product-price">
+                                        <span class="price">$49</span>
+                                        <span class="period">/month</span>
+                                    </div>
+                                    <ul class="product-features">
+                                        <li>✓ Unlimited projects</li>
+                                        <li>✓ Advanced analytics</li>
+                                        <li>✓ Priority support</li>
+                                    </ul>
+                                    <button class="component-button">Choose Plan</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Page Layout -->
+                        <div class="layout-content contact-layout" id="contact-layout" style="display: none;">
+                            <div class="contact-form">
+                                <h3>Get In Touch</h3>
+                                <p>Have questions? We'd love to hear from you.</p>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <input type="text" placeholder="Your Name" class="contact-input">
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="email" placeholder="Email Address" class="contact-input">
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <textarea placeholder="Your Message" class="contact-textarea"></textarea>
+                                </div>
+                                <button class="component-button">Send Message</button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="adaptation-description" id="adaptationDescription">
-                    <h4>Modern Style</h4>
-                    <p>Clean lines, subtle shadows, and a focus on whitespace create a contemporary feel that appeals to tech-savvy users.</p>
+                    <h4>Modern Dashboard</h4>
+                    <p>Clean lines, subtle shadows, and a focus on whitespace create a contemporary feel perfect for data-driven applications.</p>
                 </div>
             </div>
         </div>
