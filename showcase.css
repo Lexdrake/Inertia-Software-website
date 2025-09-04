@@ -585,30 +585,127 @@
 }
 
 .preview-component.playful {
-    background: linear-gradient(135deg, #fff5f5, #fff);
-    border: 3px solid #ff6b6b;
-    border-radius: 20px;
+    background: linear-gradient(135deg, #fff5f5 0%, #e3f2fd 50%, #f3e5f5 100%);
+    border: 4px dashed transparent;
+    border-radius: 25px;
+    position: relative;
+    animation: playfulPulse 3s ease-in-out infinite;
+    box-shadow: 
+        0 8px 32px rgba(255, 107, 107, 0.3),
+        0 0 0 2px #ff6b6b,
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.preview-component.playful::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #ff6b6b, #4fc3f7, #ba68c8, #66bb6a, #ffb74d, #ff6b6b);
+    background-size: 300% 300%;
+    border-radius: 25px;
+    z-index: -1;
+    animation: playfulBorder 4s ease-in-out infinite;
+}
+
+@keyframes playfulPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+@keyframes playfulBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .preview-component.playful .component-header h3 {
-    color: #ff6b6b;
-    font-weight: 700;
+    background: linear-gradient(45deg, #ff6b6b, #4fc3f7, #ba68c8);
+    background-size: 200% 200%;
+    animation: playfulText 2s ease-in-out infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@keyframes playfulText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .preview-component.playful .component-button {
-    background: linear-gradient(135deg, #ff6b6b, #ff5252);
-    border-radius: 25px;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    background: linear-gradient(135deg, #ff6b6b, #4fc3f7, #ba68c8);
+    background-size: 200% 200%;
+    border-radius: 50px;
+    border: 3px solid #fff;
+    box-shadow: 
+        0 8px 25px rgba(255, 107, 107, 0.4),
+        0 0 20px rgba(79, 195, 247, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    animation: playfulButton 3s ease-in-out infinite;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes playfulButton {
+    0%, 100% { 
+        background-position: 0% 50%; 
+        transform: rotate(-1deg);
+    }
+    25% { transform: rotate(1deg); }
+    50% { 
+        background-position: 100% 50%; 
+        transform: rotate(0deg);
+    }
+    75% { transform: rotate(-0.5deg); }
 }
 
 .preview-component.playful .stat-item {
-    background: rgba(255, 107, 107, 0.1);
-    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(79, 195, 247, 0.15));
+    border: 2px solid transparent;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-component.playful .stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: playfulShimmer 2s infinite;
+}
+
+@keyframes playfulShimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 .preview-component.playful .chart-bar {
-    background: linear-gradient(180deg, #ff6b6b, #ff8a80);
-    border-radius: 8px 8px 0 0;
+    background: linear-gradient(180deg, #ff6b6b, #4fc3f7, #ba68c8);
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-component.playful .chart-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), transparent);
+    border-radius: 15px 15px 0 0;
 }
 
 .preview-component.minimal {

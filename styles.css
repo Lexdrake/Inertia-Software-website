@@ -575,23 +575,10 @@ body {
 
 .teaser-cta {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 2rem;
     background: var(--background-alt);
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border-color);
-}
-
-.teaser-cta h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-}
-
-.teaser-cta p {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
-    color: var(--text-light);
-    line-height: 1.8;
 }
 
 .btn-large {
