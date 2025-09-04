@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Showcase - Inertia Software LLC</title>
+    <meta name="description" content="See how we build software for people - from robust architecture to beautiful designs that adapt to any style.">
+    <meta name="keywords" content="software development showcase, file architecture, design systems, responsive design, web development process">
+    
+    <meta property="og:title" content="Development Showcase - Inertia Software LLC">
+    <meta property="og:description" content="Interactive showcase of our development workflow and capabilities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://useinertia.com/showcase.html">
+    
+    <link rel="canonical" href="https://useinertia.com/showcase.html">
+    <link rel="favicon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="showcase.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/" class="logo">
+                    <span class="logo-icon">IS</span>
+                    <span class="logo-text">Inertia Software</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/#about">About</a>
+                <a href="/#products">Products</a>
+                <a href="/showcase.html" class="active">Showcase</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" id="breadcrumbNav">
+        <div class="container">
+            <div class="breadcrumb-items">
+                <a href="#architecture" class="breadcrumb-item active" data-section="architecture">
+                    <span class="breadcrumb-number">01</span>
+                    <span class="breadcrumb-text">Architecture</span>
+                </a>
+                <a href="#design-system" class="breadcrumb-item" data-section="design-system">
+                    <span class="breadcrumb-number">02</span>
+                    <span class="breadcrumb-text">Design System</span>
+                </a>
+                <a href="#style-adaptation" class="breadcrumb-item" data-section="style-adaptation">
+                    <span class="breadcrumb-number">03</span>
+                    <span class="breadcrumb-text">Style Adaptation</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="showcase-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">See How We Build Software for People</h1>
+                <p class="hero-subtitle">From robust file architecture to beautiful, adaptable designs - explore our development workflow that puts human experience first.</p>
+                <div class="workflow-preview">
+                    <div class="workflow-step" data-step="1">
+                        <div class="step-icon">🏗️</div>
+                        <span>Architecture</span>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-step" data-step="2">
+                        <div class="step-icon">🎨</div>
+                        <span>Design System</span>
+                    </div>
+                    <div class="workflow-arrow">→</div>
+                    <div class="workflow-step" data-step="3">
+                        <div class="step-icon">✨</div>
+                        <span>Style Adaptation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Visualization Section -->
+    <section id="architecture" class="showcase-section architecture-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Robust File Architecture</h2>
+                <p>Building scalable, maintainable codebases that grow with your project</p>
+            </div>
+            
+            <div class="architecture-demo">
+                <div class="demo-controls">
+                    <button class="demo-btn active" data-architecture="messy">Messy Structure</button>
+                    <button class="demo-btn" data-architecture="organized">Our Approach</button>
+                </div>
+                
+                <div class="file-tree-container">
+                    <div class="file-tree" id="fileTree">
+                        <!-- File tree will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="architecture-benefits">
+                    <div class="benefit-card">
+                        <h4>📁 Logical Organization</h4>
+                        <p>Clear folder structure that developers can navigate intuitively</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>🔄 Reusable Components</h4>
+                        <p>Modular design that prevents code duplication</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>⚡ Optimized Performance</h4>
+                        <p>Smart code splitting and lazy loading for faster apps</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design System Playground -->
+    <section id="design-system" class="showcase-section design-system-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Design System</h2>
+                <p>Consistent, flexible components that adapt to any brand</p>
+            </div>
+            
+            <div class="design-playground">
+                <div class="playground-controls">
+                    <div class="control-group">
+                        <label>Primary Color</label>
+                        <input type="color" id="primaryColor" value="#5C6BC0">
+                    </div>
+                    <div class="control-group">
+                        <label>Font Size</label>
+                        <input type="range" id="fontSize" min="14" max="20" value="16">
+                        <span id="fontSizeValue">16px</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Border Radius</label>
+                        <input type="range" id="borderRadius" min="0" max="20" value="8">
+                        <span id="borderRadiusValue">8px</span>
+                    </div>
+                </div>
+                
+                <div class="component-showcase">
+                    <div class="showcase-components">
+                        <button class="demo-button">Primary Button</button>
+                        <div class="demo-card">
+                            <h3>Card Component</h3>
+                            <p>This card adapts to your design system changes in real-time.</p>
+                        </div>
+                        <div class="demo-form">
+                            <input type="text" placeholder="Input field" class="demo-input">
+                            <div class="demo-checkbox-group">
+                                <input type="checkbox" id="demo-checkbox">
+                                <label for="demo-checkbox">Checkbox option</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Adaptation Showcase -->
+    <section id="style-adaptation" class="showcase-section style-adaptation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Style Adaptation Mastery</h2>
+                <p>Watch the same component transform across different design languages</p>
+            </div>
+            
+            <div class="adaptation-demo">
+                <div class="style-selector">
+                    <button class="style-btn active" data-style="modern">Modern</button>
+                    <button class="style-btn" data-style="corporate">Corporate</button>
+                    <button class="style-btn" data-style="playful">Playful</button>
+                    <button class="style-btn" data-style="minimal">Minimal</button>
+                </div>
+                
+                <div class="adaptation-preview">
+                    <div class="preview-component" id="adaptiveComponent">
+                        <div class="component-header">
+                            <h3>Product Dashboard</h3>
+                            <button class="component-button">Get Started</button>
+                        </div>
+                        <div class="component-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">2,847</div>
+                                <div class="stat-label">Active Users</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">96.2%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">$45K</div>
+                                <div class="stat-label">Revenue</div>
+                            </div>
+                        </div>
+                        <div class="component-chart">
+                            <div class="chart-bar" style="height: 60%"></div>
+                            <div class="chart-bar" style="height: 80%"></div>
+                            <div class="chart-bar" style="height: 45%"></div>
+                            <div class="chart-bar" style="height: 90%"></div>
+                            <div class="chart-bar" style="height: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="adaptation-description" id="adaptationDescription">
+                    <h4>Modern Style</h4>
+                    <p>Clean lines, subtle shadows, and a focus on whitespace create a contemporary feel that appeals to tech-savvy users.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="showcase-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Something Amazing Together?</h2>
+                <p>Let's discuss how we can bring this level of craftsmanship to your next project.</p>
+                <div class="cta-actions">
+                    <a href="/#contact" class="btn btn-primary">Start a Conversation</a>
+                    <a href="/" class="btn btn-secondary">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">IS</span>
+                        <span class="logo-text">Inertia Software LLC</span>
+                    </div>
+                    <p>Building thoughtful technology that adapts to human behavior.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Company</h5>
+                        <a href="/">Home</a>
+                        <a href="/#about">About Us</a>
+                        <a href="/#products">Products</a>
+                        <a href="/showcase.html">Showcase</a>
+                        <a href="/#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Legal</h5>
+                        <a href="/privacy-policy.html">Privacy Policy</a>
+                        <a href="/terms.html">Terms of Service</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Connect</h5>
+                        <a href="mailto:useinertia@gmail.com">Email Us</a>
+                        <a href="https://github.com/inertia-software">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Inertia Software LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="showcase.js"></script>
+    <script>
+        // Basic navigation functionality
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
