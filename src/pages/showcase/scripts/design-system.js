@@ -196,9 +196,19 @@ function initStyleAdaptation() {
     const adaptiveComponent = document.getElementById('adaptiveComponent');
     const adaptationDescription = document.getElementById('adaptationDescription');
     
+    // Debug logging
+    console.log('InitStyleAdaptation called');
+    console.log('Style buttons found:', styleButtons.length);
+    console.log('Layout buttons found:', layoutButtons.length);
+    console.log('Adaptive component found:', !!adaptiveComponent);
+    console.log('Adaptation description found:', !!adaptationDescription);
+    
     // Initialize layout switching
     layoutButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Layout button clicked:', btn.dataset.layout);
+            
             const layout = btn.dataset.layout;
             
             // Update active button
@@ -209,14 +219,20 @@ function initStyleAdaptation() {
             switchLayout(layout);
             
             // Update description based on current style and new layout
-            const currentStyle = document.querySelector('.style-btn.active').dataset.style;
-            updateDescription(currentStyle, layout);
+            const currentStyleBtn = document.querySelector('.style-btn.active');
+            if (currentStyleBtn) {
+                const currentStyle = currentStyleBtn.dataset.style;
+                updateDescription(currentStyle, layout);
+            }
         });
     });
     
     // Initialize style switching
     styleButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Style button clicked:', btn.dataset.style);
+            
             const style = btn.dataset.style;
             
             // Update active button
@@ -227,8 +243,11 @@ function initStyleAdaptation() {
             applyStyleToLayout(style);
             
             // Update description based on new style and current layout
-            const currentLayout = document.querySelector('.layout-btn.active').dataset.layout;
-            updateDescription(style, currentLayout);
+            const currentLayoutBtn = document.querySelector('.layout-btn.active');
+            if (currentLayoutBtn) {
+                const currentLayout = currentLayoutBtn.dataset.layout;
+                updateDescription(style, currentLayout);
+            }
         });
     });
 }
