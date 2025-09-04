@@ -712,6 +712,9 @@
     background: var(--background-alt);
     border-radius: var(--border-radius);
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .feature-item:hover {
