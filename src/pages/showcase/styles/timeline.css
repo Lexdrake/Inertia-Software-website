@@ -1,0 +1,205 @@
+/* Timeline Comparison Styles */
+.timeline-comparison-container {
+    background: #1a1a1a;
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+.comparison-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.timeline-controls {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: inline-block;
+}
+
+.timeline-controls label {
+    color: #e8e8e8;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+#timelineSlider {
+    width: 300px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    outline: none;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+#timelineSlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#timelineSlider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.comparison-view {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.comparison-side {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.side-header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    text-align: center;
+}
+
+.side-header h4 {
+    color: #e8e8e8;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.metrics {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e8e8e8;
+    transition: all 0.3s ease;
+}
+
+.duplicate-metric .metric-value {
+    color: #ff6b6b;
+}
+
+.duplicate-metric.has-duplicates .metric-value {
+    animation: duplicateWarning 1s ease-in-out;
+}
+
+@keyframes duplicateWarning {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); color: #ff4444; }
+}
+
+.comparison-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.vs-badge {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.125rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.messy-tree,
+.organized-tree {
+    background: transparent;
+    border-radius: 0;
+    padding: 1rem;
+}
+
+.messy-tree .file-tree,
+.organized-tree .file-tree {
+    min-height: 300px;
+}
+
+/* File highlighting for timeline */
+.file-item.new-file {
+    animation: fileAppear 0.5s ease-out;
+    background: rgba(76, 175, 80, 0.2);
+    border-left: 3px solid #4caf50;
+    border-radius: 3px;
+    padding-left: 8px;
+    margin-left: -8px;
+}
+
+.file-item.duplicate-file {
+    animation: duplicateHighlight 1s ease-in-out;
+    background: rgba(255, 107, 107, 0.2);
+    border-left: 3px solid #ff6b6b;
+    border-radius: 3px;
+    padding-left: 8px;
+    margin-left: -8px;
+}
+
+@keyframes fileAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px) scale(0.8);
+        background: rgba(76, 175, 80, 0.6);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        background: rgba(76, 175, 80, 0.2);
+    }
+}
+
+@keyframes duplicateHighlight {
+    0%, 100% {
+        background: rgba(255, 107, 107, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        background: rgba(255, 107, 107, 0.4);
+        transform: scale(1.02);
+    }
+}
+

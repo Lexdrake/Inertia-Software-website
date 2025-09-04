@@ -1,0 +1,112 @@
+}
+
+/* Architecture Section */
+.architecture-demo {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.demo-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.demo-btn {
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--border-color);
+    background: white;
+    color: var(--text-light);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.demo-btn:hover,
+.demo-btn.active {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: var(--background-alt);
+}
+
+.file-tree-container {
+    background: #1a1a1a;
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+.file-tree {
+    font-family: 'Monaco', 'Menlo', monospace;
+    color: #e8e8e8;
+    line-height: 1.8;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.file-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.file-icon {
+    width: 16px;
+    display: inline-block;
+}
+
+.folder {
+    color: #64b5f6;
+}
+
+.file {
+    color: #a5d6a7;
+}
+
+.component {
+    color: #ffb74d;
+}
+
+.config {
+    color: #f48fb1;
+}
+
+.architecture-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.benefit-card h4 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.benefit-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
