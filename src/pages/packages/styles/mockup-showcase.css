@@ -1,0 +1,201 @@
+/* Mockup Showcase Section - Interactive mockups and device frames */
+
+.mockup-showcase {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.mockup-showcase .section-header h2 {
+    color: white;
+}
+
+.mockup-showcase .section-header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.showcase-tabs {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.tab-btn.active {
+    background: white;
+    color: #667eea;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tier-selector {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tier-btn {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tier-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tier-btn.active {
+    background: rgba(255, 255, 255, 0.95);
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Device Frames */
+.mockup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.device-frame {
+    background: #1a1a1a;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.desktop-frame {
+    width: 900px;
+    max-width: 90vw;
+}
+
+.tablet-frame {
+    width: 600px;
+    max-width: 80vw;
+}
+
+.mobile-frame {
+    width: 320px;
+    border-radius: 25px;
+}
+
+.device-screen {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
+}
+
+.mobile-frame .device-screen {
+    min-height: 600px;
+    border-radius: 15px;
+}
+
+/* Mockup Content Styles */
+.mockup-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.mockup-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Device Indicators */
+.device-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.device-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.device-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.device-btn.active {
+    background: white;
+    color: #667eea;
+}
+
+.device-btn svg {
+    stroke-width: 2;
+}
+
+/* Feature Highlights */
+.showcase-features {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.feature-highlight {
+    text-align: center;
+}
+
+.feature-highlight h3 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.tier-features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}

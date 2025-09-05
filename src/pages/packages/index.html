@@ -6,7 +6,10 @@
     <title>Service Packages - Inertia Software LLC</title>
     <meta name="description" content="Explore our comprehensive service packages for web and mobile app development. From MVPs to enterprise solutions.">
     <link rel="stylesheet" href="../../styles/main.css">
-    <link rel="stylesheet" href="styles/packages.css">
+    <link rel="stylesheet" href="styles/packages-layout.css">
+    <link rel="stylesheet" href="styles/mockup-showcase.css">
+    <link rel="stylesheet" href="styles/mockup-components.css">
+    <link rel="stylesheet" href="styles/device-responsive.css">
     <link rel="stylesheet" href="styles/service-form.css">
 </head>
 <body>
@@ -835,12 +838,22 @@
     </footer>
 
     <script>
+        // Navigation toggle functionality
         document.getElementById('navToggle').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
             this.classList.toggle('active');
         });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.getElementById('navToggle').classList.remove('active');
+            });
+        });
     </script>
+    <script src="../../scripts/shared/form-utils.js"></script>
     <script src="scripts/mockup-showcase.js"></script>
-    <script src="scripts/service-inquiry-form.js"></script>
+    <script src="scripts/service-form-simplified.js"></script>
 </body>
 </html>

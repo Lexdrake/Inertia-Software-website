@@ -10,6 +10,13 @@
     gap: 2rem;
 }
 
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 .service-card {
     padding: 2rem;
     background: var(--background-alt);
@@ -154,5 +161,26 @@
     color: var(--text-light);
     margin-bottom: 1.5rem;
     font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+    .teaser-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .teaser-cta {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-cta {
+        padding: 1.5rem;
+    }
 }
 

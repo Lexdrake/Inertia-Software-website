@@ -35,3 +35,15 @@
     color: white;
 }
 
+@media (max-width: 768px) {
+    .btn {
+        padding: 0.875rem 2rem;
+        font-size: 0.95rem;
+    }
+    
+    .btn-large {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
