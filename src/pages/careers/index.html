@@ -124,7 +124,7 @@
                     </div>
                     
                     <div class="job-actions">
-                        <button class="btn btn-primary" onclick="openJobApplication('content-community-manager')">Apply for This Position</button>
+                        <button class="btn btn-primary" onclick="showForm('job-application')">Apply for This Position</button>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,15 @@
                 <h2>Don't See the Right Fit?</h2>
                 <p>We're always interested in connecting with talented individuals who share our vision. If you think you'd be a great addition to our team, we'd love to hear from you.</p>
                 
-                <button class="btn btn-secondary" onclick="openGeneralInquiry()">Send General Inquiry</button>
+                <button class="btn btn-secondary" onclick="showForm('general-inquiry')">Send General Inquiry</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="careers-forms-section" id="careersFormsSection" style="display: none;">
+        <div class="container">
+            <div class="careers-form-container-wrapper">
+                <!-- Forms will be inserted here by JavaScript -->
             </div>
         </div>
     </section>

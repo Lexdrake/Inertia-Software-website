@@ -150,14 +150,30 @@
     color: var(--primary-dark);
 }
 
-.contact-cta {
+.contact-cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-cta,
+.careers-cta {
     padding: 2rem;
     background: white;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.contact-cta p {
+.contact-cta:hover,
+.careers-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-cta p,
+.careers-cta p {
     color: var(--text-light);
     margin-bottom: 1.5rem;
     font-size: 1.125rem;
@@ -266,7 +282,13 @@
         gap: 1.5rem;
     }
     
-    .contact-cta {
+    .contact-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-cta,
+    .careers-cta {
         padding: 1.5rem;
     }
     
