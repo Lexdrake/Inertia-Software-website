@@ -42,6 +42,12 @@ function showForm(formType) {
 function hideForm() {
     const formsSection = document.getElementById('careersFormsSection');
     formsSection.style.display = 'none';
+    
+    // Scroll back to appropriate section for better UX
+    const currentOpeningsSection = document.querySelector('.current-openings');
+    if (currentOpeningsSection) {
+        currentOpeningsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 // Generate job application form HTML

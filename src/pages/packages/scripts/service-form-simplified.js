@@ -41,6 +41,13 @@ function replaceEmailLinksWithFormTriggers() {
 function showPackageForm(packageName, packagePrice) {
     const isCustom = packageName.includes('Custom');
     
+    // Store context for better UX on close
+    FormUtils.packageContext = {
+        packageName: packageName,
+        isWebPackage: packageName.includes('Starter') || packageName.includes('Professional') || packageName.includes('E-Commerce') || packageName.includes('Enterprise'),
+        isMobilePackage: packageName.includes('MVP') || packageName.includes('Standard') || packageName.includes('Premium') || packageName.includes('Maintenance')
+    };
+    
     const formHTML = `
         <div class="form-header">
             <h2>Start Your Project</h2>

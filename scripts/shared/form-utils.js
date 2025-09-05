@@ -42,11 +42,41 @@ const FormUtils = {
         if (modal) {
             modal.style.display = 'none';
             
-            // If we're on the home page and the form was opened from services section, scroll back
+            // Smart scrolling based on current page
             if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // Home page: scroll back to services section
                 const servicesSection = document.getElementById('services');
                 if (servicesSection) {
                     servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            } else if (window.location.pathname.includes('/packages/')) {
+                // Packages page: scroll back to appropriate section based on selected package
+                let targetSection = null;
+                
+                if (this.packageContext) {
+                    if (this.packageContext.isMobilePackage) {
+                        targetSection = document.getElementById('mobile-apps');
+                    } else if (this.packageContext.isWebPackage) {
+                        targetSection = document.getElementById('web-dev');
+                    }
+                    
+                    // Clear the context after use
+                    this.packageContext = null;
+                }
+                
+                // Default to web-dev section if no context or section not found
+                if (!targetSection) {
+                    targetSection = document.getElementById('web-dev');
+                }
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            } else if (window.location.pathname.includes('/careers/')) {
+                // Careers page: scroll back to current openings section
+                const currentOpeningsSection = document.querySelector('.current-openings');
+                if (currentOpeningsSection) {
+                    currentOpeningsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }
         }

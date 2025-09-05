@@ -514,39 +514,147 @@
                                 
                                 <!-- Premium App Mockup -->
                                 <div class="mockup-content" data-tier="premium">
-                                    <div class="app-header">
+                                    <div class="app-header premium">
                                         <div class="app-status-bar">
                                             <span>9:41</span>
-                                            <span>⚡ 🔋 📶</span>
+                                            <div class="status-indicators">
+                                                <span class="sync-indicator">🔄</span>
+                                                <span>⚡ 🔋 📶</span>
+                                            </div>
+                                        </div>
+                                        <div class="app-nav premium">
+                                            <div class="nav-left">
+                                                <div class="user-avatar-small"></div>
+                                                <div class="nav-title">
+                                                    <h4>Analytics Hub</h4>
+                                                    <span class="nav-subtitle">Enterprise Dashboard</span>
+                                                </div>
+                                            </div>
+                                            <div class="nav-right">
+                                                <span class="notification-badge">🔔 <span class="badge-count">3</span></span>
+                                                <span class="search-icon">🔍</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="app-content premium">
-                                        <div class="map-view">
-                                            <div class="map-placeholder">
-                                                <div class="location-pin">📍</div>
-                                                <p>Real-time Location Services</p>
+                                        <!-- Quick Stats Overview -->
+                                        <div class="premium-stats-grid">
+                                            <div class="stat-tile">
+                                                <div class="stat-icon">📈</div>
+                                                <div class="stat-info">
+                                                    <div class="stat-number">$2.4M</div>
+                                                    <div class="stat-label">Revenue</div>
+                                                    <div class="stat-trend positive">+15.3%</div>
+                                                </div>
+                                            </div>
+                                            <div class="stat-tile">
+                                                <div class="stat-icon">👥</div>
+                                                <div class="stat-info">
+                                                    <div class="stat-number">12,845</div>
+                                                    <div class="stat-label">Active Users</div>
+                                                    <div class="stat-trend positive">+8.7%</div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="premium-card">
-                                            <h3>Enterprise Features</h3>
-                                            <div class="feature-list">
-                                                <div class="feature">✓ Offline Mode</div>
-                                                <div class="feature">✓ Real-time Sync</div>
-                                                <div class="feature">✓ Advanced Analytics</div>
-                                                <div class="feature">✓ Team Collaboration</div>
-                                                <div class="feature">✓ API Integration</div>
+                                        
+                                        <!-- Advanced Analytics Chart -->
+                                        <div class="premium-chart-card">
+                                            <div class="chart-header">
+                                                <h4>Real-time Performance</h4>
+                                                <div class="chart-controls">
+                                                    <span class="active">1D</span>
+                                                    <span>1W</span>
+                                                    <span>1M</span>
+                                                </div>
+                                            </div>
+                                            <div class="premium-chart">
+                                                <div class="chart-line">
+                                                    <div class="chart-point" style="left: 10%; bottom: 30%"></div>
+                                                    <div class="chart-point" style="left: 30%; bottom: 65%"></div>
+                                                    <div class="chart-point" style="left: 50%; bottom: 45%"></div>
+                                                    <div class="chart-point active" style="left: 70%; bottom: 80%"></div>
+                                                    <div class="chart-point" style="left: 90%; bottom: 70%"></div>
+                                                </div>
+                                                <div class="chart-grid"></div>
                                             </div>
                                         </div>
-                                        <div class="floating-action">
-                                            <button class="fab">+</button>
+                                        
+                                        <!-- Team Activity Feed -->
+                                        <div class="activity-feed">
+                                            <div class="feed-header">
+                                                <h4>Team Activity</h4>
+                                                <span class="live-indicator">🟢 Live</span>
+                                            </div>
+                                            <div class="activity-item">
+                                                <div class="activity-avatar"></div>
+                                                <div class="activity-content">
+                                                    <span class="activity-user">Sarah Chen</span>
+                                                    <span class="activity-action">completed analysis</span>
+                                                    <div class="activity-time">2 min ago</div>
+                                                </div>
+                                                <div class="activity-status">✓</div>
+                                            </div>
+                                            <div class="activity-item">
+                                                <div class="activity-avatar"></div>
+                                                <div class="activity-content">
+                                                    <span class="activity-user">Mike Torres</span>
+                                                    <span class="activity-action">updated dashboard</span>
+                                                    <div class="activity-time">5 min ago</div>
+                                                </div>
+                                                <div class="activity-status">🔄</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Quick Actions -->
+                                        <div class="quick-actions">
+                                            <div class="action-tile">
+                                                <div class="action-icon">📊</div>
+                                                <span>Generate Report</span>
+                                            </div>
+                                            <div class="action-tile">
+                                                <div class="action-icon">🎯</div>
+                                                <span>Set Goals</span>
+                                            </div>
+                                            <div class="action-tile">
+                                                <div class="action-icon">💬</div>
+                                                <span>Team Chat</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="floating-action premium">
+                                            <button class="fab premium">
+                                                <span class="fab-icon">+</span>
+                                                <div class="fab-menu">
+                                                    <div class="fab-option">📄</div>
+                                                    <div class="fab-option">📈</div>
+                                                    <div class="fab-option">👥</div>
+                                                </div>
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="app-bottom-nav premium">
-                                        <div class="nav-item">🏠</div>
-                                        <div class="nav-item">📊</div>
-                                        <div class="nav-item active">🗺️</div>
-                                        <div class="nav-item">👥</div>
-                                        <div class="nav-item">⚙️</div>
+                                        <div class="nav-item active">
+                                            <div class="nav-icon">📊</div>
+                                            <div class="nav-label">Analytics</div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-icon">🗂️</div>
+                                            <div class="nav-label">Projects</div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-icon">👥</div>
+                                            <div class="nav-label">Team</div>
+                                            <div class="nav-badge">2</div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-icon">💬</div>
+                                            <div class="nav-label">Messages</div>
+                                            <div class="nav-badge">5</div>
+                                        </div>
+                                        <div class="nav-item">
+                                            <div class="nav-icon">⚙️</div>
+                                            <div class="nav-label">Settings</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

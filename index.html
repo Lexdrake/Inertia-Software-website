@@ -441,6 +441,12 @@
         function hideQuoteForm() {
             const formContainer = document.getElementById('quoteFormContainer');
             formContainer.style.display = 'none';
+            
+            // Scroll back to the services section for better UX
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
 
         // Handle quote form submission
