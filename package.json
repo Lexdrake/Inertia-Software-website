@@ -2,16 +2,7 @@
   "name": "inertia-website",
   "version": "1.0.0",
   "description": "Inertia Software website with beta testing automation",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'No build step needed for static site'",
-    "start": "vercel dev"
-  },
   "dependencies": {
-    "googleapis": "^128.0.0"
-  },
-  "keywords": ["inertia", "beta", "automation", "gmail-api"],
-  "author": "Inertia Software LLC",
-  "license": "MIT"
+    "googleapis": "^127.0.0"
+  }
 }
