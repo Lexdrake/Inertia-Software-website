@@ -13,27 +13,19 @@ function replaceServiceLinksWithFormTriggers() {
     const serviceButtons = document.querySelectorAll('.service-card .btn-primary');
     
     serviceButtons.forEach(button => {
-        if (button.href && (button.href.includes('mailto:') || button.href.includes('/packages/'))) {
+        // Only intercept mailto links, let packages links work normally
+        if (button.href && button.href.includes('mailto:')) {
             // Get service info from the card
             const serviceCard = button.closest('.service-card');
             const serviceName = serviceCard.querySelector('h3').textContent;
             
-            // Store original href if it's a packages link
-            const originalHref = button.href;
-            
             // Convert to button and add click handler
             button.onclick = (e) => {
                 e.preventDefault();
-                
-                // If it was a packages link, show service-specific form
-                if (originalHref.includes('/packages/')) {
-                    showServiceForm(serviceName, 'View Packages');
-                } else {
-                    // It was a mailto link (like Custom Software)
-                    showServiceForm(serviceName, 'Get Quote');
-                }
+                showServiceForm(serviceName, 'Get Quote');
             };
         }
+        // For packages links, do nothing - let them navigate normally
     });
 }
 
