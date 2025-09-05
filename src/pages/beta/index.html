@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Testing - Inertia Planner | Thanks for Your Help!</title>
+    <meta name="description" content="Thank you for helping test Inertia Planner! Your feedback helps make this app better for everyone.">
+    
+    <link rel="canonical" href="https://useinertia.com/beta">
+    <link rel="favicon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="styles/beta.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/" class="logo">
+                    <span class="logo-icon">IS</span>
+                    <span class="logo-text">Inertia Software</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/#about">About</a>
+                <a href="/#products">Products</a>
+                <a href="/src/pages/showcase/">Showcase</a>
+                <a href="#" class="active">Beta Testing</a>
+                <a href="/#contact">Contact</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="beta-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="beta-badge">Beta Testing Program</div>
+                <h1 class="hero-title">Hey there! Thanks for helping out! 🎉</h1>
+                <p class="hero-subtitle">You're part of the small group of awesome people helping me make Inertia Planner better. Your honest feedback, bug reports, and ideas mean the world to me and will help shape this app into something truly useful.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="beta-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📱</div>
+                    <h3>What You're Testing</h3>
+                    <p>Inertia Planner is a life management app designed to help you stay organized across work, school, and personal life. It learns your routines and helps you build momentum instead of fighting against inertia.</p>
+                    <div class="download-info">
+                        <h4>Ready to Download?</h4>
+                        <div class="download-options">
+                            <div class="download-option">
+                                <strong>iPhone:</strong> Download TestFlight, use code: <code>[BETA_CODE_PLACEHOLDER]</code>
+                            </div>
+                            <div class="download-option">
+                                <strong>Android:</strong> Use Play Console link with code: <code>[BETA_CODE_PLACEHOLDER]</code>
+                            </div>
+                        </div>
+                        <p class="download-note">Check your invitation email for the actual codes!</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🔍</div>
+                    <h3>What I'm Looking For</h3>
+                    <p>Honest feedback about what works, what doesn't, bugs you find, features you wish existed, and how the app fits (or doesn't fit) into your real life. No feedback is too small!</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">❤️</div>
+                    <h3>Why This Matters</h3>
+                    <p>Your input directly shapes the app. Every suggestion gets considered, every bug gets fixed, and your real-world usage helps me understand how people actually want to organize their lives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Share Your Thoughts</h2>
+                <p>Choose the type of feedback you want to share:</p>
+            </div>
+            
+            <div class="feedback-options">
+                <div class="feedback-card">
+                    <h3>💬 General Feedback</h3>
+                    <p>Share your overall thoughts, suggestions, or just chat about your experience using the app.</p>
+                    <button class="btn btn-primary" onclick="showForm('general')">Give Feedback</button>
+                </div>
+                
+                <div class="feedback-card">
+                    <h3>🐛 Found a Bug?</h3>
+                    <p>Something not working right? Let me know what happened so I can fix it!</p>
+                    <button class="btn btn-primary" onclick="showForm('bug')">Report Bug</button>
+                </div>
+                
+                <div class="feedback-card">
+                    <h3>💡 Feature Ideas</h3>
+                    <p>Have an idea for something that would make the app more useful? I'd love to hear it!</p>
+                    <button class="btn btn-primary" onclick="showForm('feature')">Suggest Feature</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="forms-section" id="formsSection" style="display: none;">
+        <div class="container">
+            <div class="form-container">
+                <!-- Forms will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section class="beta-resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>Helpful Stuff</h2>
+                <p>Everything you need to know:</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>📖 Getting Started</h3>
+                    <p>New to the app? Here's how to set up your first routines and get the most out of Inertia Planner.</p>
+                    <a href="getting-started.html" class="resource-link">View Guide</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>🔄 What's New</h3>
+                    <p>Latest updates, new features, and changes based on feedback from testers like you.</p>
+                    <a href="whats-new.html" class="resource-link">See Updates</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>❓ FAQ</h3>
+                    <p>Common questions and answers from other beta testers.</p>
+                    <a href="faq.html" class="resource-link">Browse FAQ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="beta-thanks">
+        <div class="container">
+            <div class="thanks-content">
+                <h2>Seriously, Thank You!</h2>
+                <p>Building something people actually want to use is hard, and having friends and family willing to test early versions and give honest feedback is incredibly valuable. I really appreciate you taking the time to help make this better.</p>
+                <p>If you have any questions or just want to chat about the app, feel free to reach out anytime!</p>
+                <a href="mailto:useinertia@gmail.com" class="btn btn-secondary">Email Me Directly</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">IS</span>
+                        <span class="logo-text">Inertia Software LLC</span>
+                    </div>
+                    <p>Building thoughtful technology that adapts to human behavior.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Company</h5>
+                        <a href="/">Home</a>
+                        <a href="/#about">About Us</a>
+                        <a href="/#products">Products</a>
+                        <a href="/src/pages/showcase/">Showcase</a>
+                        <a href="/#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Legal</h5>
+                        <a href="/src/pages/legal/privacy-policy.html">Privacy Policy</a>
+                        <a href="/src/pages/legal/terms.html">Terms of Service</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Connect</h5>
+                        <a href="mailto:useinertia@gmail.com">Email Us</a>
+                        <a href="https://github.com/inertia-software">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Inertia Software LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/beta.js"></script>
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
