@@ -40,6 +40,469 @@
         </div>
     </section>
 
+    <section class="mockup-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2>See What You'll Get</h2>
+                <p>Interactive previews of each package tier</p>
+            </div>
+            
+            <div class="showcase-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-category="web">Website Packages</button>
+                    <button class="tab-btn" data-category="mobile">Mobile App Packages</button>
+                </div>
+                
+                <div class="tab-content active" id="web-showcase">
+                    <div class="tier-selector">
+                        <button class="tier-btn active" data-tier="starter">Starter</button>
+                        <button class="tier-btn" data-tier="professional">Professional</button>
+                        <button class="tier-btn" data-tier="ecommerce">E-Commerce</button>
+                        <button class="tier-btn" data-tier="enterprise">Enterprise</button>
+                    </div>
+                    
+                    <div class="mockup-container">
+                        <div class="device-frame desktop-frame">
+                            <div class="device-screen">
+                                <!-- Starter Mockup -->
+                                <div class="mockup-content active" data-tier="starter">
+                                    <div class="mock-header">
+                                        <div class="mock-nav">
+                                            <div class="mock-logo">YourBrand</div>
+                                            <div class="mock-menu">
+                                                <span>About</span>
+                                                <span>Services</span>
+                                                <span>Contact</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mock-hero">
+                                        <h3>Welcome to Your Business</h3>
+                                        <p>Professional landing page with compelling content</p>
+                                        <button class="mock-btn">Get Started</button>
+                                    </div>
+                                    <div class="mock-features">
+                                        <div class="mock-feature">
+                                            <div class="mock-icon">✓</div>
+                                            <h4>Feature One</h4>
+                                            <p>Description of your service</p>
+                                        </div>
+                                        <div class="mock-feature">
+                                            <div class="mock-icon">✓</div>
+                                            <h4>Feature Two</h4>
+                                            <p>Another key benefit</p>
+                                        </div>
+                                        <div class="mock-feature">
+                                            <div class="mock-icon">✓</div>
+                                            <h4>Feature Three</h4>
+                                            <p>Value proposition</p>
+                                        </div>
+                                    </div>
+                                    <div class="mock-cta">
+                                        <h3>Ready to Get Started?</h3>
+                                        <form class="mock-form">
+                                            <input type="text" placeholder="Your Email">
+                                            <button>Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                
+                                <!-- Professional Mockup -->
+                                <div class="mockup-content" data-tier="professional">
+                                    <div class="mock-header">
+                                        <div class="mock-nav">
+                                            <div class="mock-logo">YourBrand</div>
+                                            <div class="mock-menu">
+                                                <span>Home</span>
+                                                <span>About</span>
+                                                <span>Services</span>
+                                                <span>Portfolio</span>
+                                                <span>Blog</span>
+                                                <span>Contact</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mock-hero-slider">
+                                        <div class="slider-dots">
+                                            <span class="dot active"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                        <h3>Professional Multi-Page Website</h3>
+                                        <p>Complete business solution with blog and portfolio</p>
+                                    </div>
+                                    <div class="mock-grid">
+                                        <div class="mock-card">
+                                            <div class="mock-image"></div>
+                                            <h4>Service One</h4>
+                                            <p>Detailed service page</p>
+                                        </div>
+                                        <div class="mock-card">
+                                            <div class="mock-image"></div>
+                                            <h4>Service Two</h4>
+                                            <p>Another service offering</p>
+                                        </div>
+                                        <div class="mock-card">
+                                            <div class="mock-image"></div>
+                                            <h4>Service Three</h4>
+                                            <p>Additional expertise</p>
+                                        </div>
+                                    </div>
+                                    <div class="mock-blog-preview">
+                                        <h3>Latest Blog Posts</h3>
+                                        <div class="blog-grid">
+                                            <div class="blog-card">
+                                                <div class="blog-date">Jan 15, 2024</div>
+                                                <h4>Industry Insights</h4>
+                                                <p>Stay updated with latest trends...</p>
+                                            </div>
+                                            <div class="blog-card">
+                                                <div class="blog-date">Jan 10, 2024</div>
+                                                <h4>Case Study</h4>
+                                                <p>How we helped client achieve...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- E-Commerce Mockup -->
+                                <div class="mockup-content" data-tier="ecommerce">
+                                    <div class="mock-header">
+                                        <div class="mock-nav">
+                                            <div class="mock-logo">YourStore</div>
+                                            <div class="mock-menu">
+                                                <span>Shop</span>
+                                                <span>Categories</span>
+                                                <span>Deals</span>
+                                                <span>About</span>
+                                            </div>
+                                            <div class="mock-cart">
+                                                <span>🛒 Cart (3)</span>
+                                                <span>👤 Account</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mock-banner">
+                                        <h3>Summer Sale - 30% Off</h3>
+                                        <button class="mock-btn">Shop Now</button>
+                                    </div>
+                                    <div class="mock-products">
+                                        <div class="product-filters">
+                                            <select><option>All Categories</option></select>
+                                            <select><option>Sort by Price</option></select>
+                                        </div>
+                                        <div class="products-grid">
+                                            <div class="product-card">
+                                                <div class="product-image"></div>
+                                                <h4>Product Name</h4>
+                                                <div class="product-price">$29.99</div>
+                                                <button class="add-to-cart">Add to Cart</button>
+                                            </div>
+                                            <div class="product-card">
+                                                <div class="product-badge">Sale</div>
+                                                <div class="product-image"></div>
+                                                <h4>Featured Item</h4>
+                                                <div class="product-price">
+                                                    <span class="old-price">$49.99</span>
+                                                    <span>$34.99</span>
+                                                </div>
+                                                <button class="add-to-cart">Add to Cart</button>
+                                            </div>
+                                            <div class="product-card">
+                                                <div class="product-image"></div>
+                                                <h4>Popular Choice</h4>
+                                                <div class="product-price">$19.99</div>
+                                                <button class="add-to-cart">Add to Cart</button>
+                                            </div>
+                                            <div class="product-card">
+                                                <div class="product-image"></div>
+                                                <h4>New Arrival</h4>
+                                                <div class="product-price">$39.99</div>
+                                                <button class="add-to-cart">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Enterprise Mockup -->
+                                <div class="mockup-content" data-tier="enterprise">
+                                    <div class="mock-header enterprise">
+                                        <div class="mock-nav">
+                                            <div class="mock-logo">Enterprise App</div>
+                                            <div class="mock-menu">
+                                                <span>Dashboard</span>
+                                                <span>Analytics</span>
+                                                <span>Users</span>
+                                                <span>Settings</span>
+                                            </div>
+                                            <div class="user-menu">
+                                                <span>🔔</span>
+                                                <span>Admin User</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-layout">
+                                        <div class="sidebar">
+                                            <div class="sidebar-item active">📊 Overview</div>
+                                            <div class="sidebar-item">👥 Customers</div>
+                                            <div class="sidebar-item">📦 Products</div>
+                                            <div class="sidebar-item">💳 Payments</div>
+                                            <div class="sidebar-item">📈 Reports</div>
+                                            <div class="sidebar-item">⚙️ Settings</div>
+                                        </div>
+                                        <div class="dashboard-content">
+                                            <div class="stats-row">
+                                                <div class="stat-card">
+                                                    <h4>Total Revenue</h4>
+                                                    <div class="stat-value">$124,563</div>
+                                                    <div class="stat-change positive">+12.5%</div>
+                                                </div>
+                                                <div class="stat-card">
+                                                    <h4>Active Users</h4>
+                                                    <div class="stat-value">3,421</div>
+                                                    <div class="stat-change positive">+8.2%</div>
+                                                </div>
+                                                <div class="stat-card">
+                                                    <h4>Conversion Rate</h4>
+                                                    <div class="stat-value">4.3%</div>
+                                                    <div class="stat-change negative">-0.5%</div>
+                                                </div>
+                                            </div>
+                                            <div class="chart-container">
+                                                <h4>Performance Analytics</h4>
+                                                <div class="mock-chart">
+                                                    <div class="chart-bar" style="height: 60%"></div>
+                                                    <div class="chart-bar" style="height: 80%"></div>
+                                                    <div class="chart-bar" style="height: 45%"></div>
+                                                    <div class="chart-bar" style="height: 90%"></div>
+                                                    <div class="chart-bar" style="height: 70%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="data-table">
+                                                <h4>Recent Transactions</h4>
+                                                <table>
+                                                    <tr>
+                                                        <td>Order #1234</td>
+                                                        <td>John Doe</td>
+                                                        <td>$299.99</td>
+                                                        <td><span class="status-badge">Completed</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Order #1235</td>
+                                                        <td>Jane Smith</td>
+                                                        <td>$149.99</td>
+                                                        <td><span class="status-badge pending">Processing</span></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="device-indicators">
+                            <button class="device-btn active" data-device="desktop">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
+                                </svg>
+                                Desktop
+                            </button>
+                            <button class="device-btn" data-device="tablet">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                                </svg>
+                                Tablet
+                            </button>
+                            <button class="device-btn" data-device="mobile">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                                </svg>
+                                Mobile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="mobile-showcase">
+                    <div class="tier-selector">
+                        <button class="tier-btn active" data-tier="mvp">MVP</button>
+                        <button class="tier-btn" data-tier="standard">Standard</button>
+                        <button class="tier-btn" data-tier="premium">Premium</button>
+                    </div>
+                    
+                    <div class="mockup-container">
+                        <div class="device-frame mobile-frame">
+                            <div class="device-screen">
+                                <!-- MVP App Mockup -->
+                                <div class="mockup-content active" data-tier="mvp">
+                                    <div class="app-header">
+                                        <div class="app-status-bar">
+                                            <span>9:41</span>
+                                            <span>⚡ 🔋 📶</span>
+                                        </div>
+                                        <div class="app-nav">
+                                            <span>☰</span>
+                                            <span>Your App</span>
+                                            <span>👤</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-content">
+                                        <div class="app-card">
+                                            <h3>Welcome Back!</h3>
+                                            <p>Your daily overview</p>
+                                        </div>
+                                        <div class="app-menu">
+                                            <div class="app-menu-item">
+                                                <div class="app-icon">📊</div>
+                                                <span>Dashboard</span>
+                                            </div>
+                                            <div class="app-menu-item">
+                                                <div class="app-icon">📝</div>
+                                                <span>Tasks</span>
+                                            </div>
+                                            <div class="app-menu-item">
+                                                <div class="app-icon">📅</div>
+                                                <span>Calendar</span>
+                                            </div>
+                                            <div class="app-menu-item">
+                                                <div class="app-icon">⚙️</div>
+                                                <span>Settings</span>
+                                            </div>
+                                        </div>
+                                        <div class="app-action">
+                                            <button class="app-btn-primary">Create New</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Standard App Mockup -->
+                                <div class="mockup-content" data-tier="standard">
+                                    <div class="app-header">
+                                        <div class="app-status-bar">
+                                            <span>9:41</span>
+                                            <span>⚡ 🔋 📶</span>
+                                        </div>
+                                        <div class="app-nav">
+                                            <span>←</span>
+                                            <span>Dashboard</span>
+                                            <span>🔔</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-content">
+                                        <div class="user-profile">
+                                            <div class="avatar"></div>
+                                            <h3>Hello, User!</h3>
+                                            <p>Premium Member</p>
+                                        </div>
+                                        <div class="app-stats">
+                                            <div class="stat-item">
+                                                <div class="stat-number">42</div>
+                                                <div class="stat-label">Active</div>
+                                            </div>
+                                            <div class="stat-item">
+                                                <div class="stat-number">128</div>
+                                                <div class="stat-label">Completed</div>
+                                            </div>
+                                            <div class="stat-item">
+                                                <div class="stat-number">95%</div>
+                                                <div class="stat-label">Progress</div>
+                                            </div>
+                                        </div>
+                                        <div class="app-list">
+                                            <div class="list-item">
+                                                <div class="item-icon">📈</div>
+                                                <div class="item-content">
+                                                    <h4>Analytics Dashboard</h4>
+                                                    <p>View detailed insights</p>
+                                                </div>
+                                                <span>→</span>
+                                            </div>
+                                            <div class="list-item">
+                                                <div class="item-icon">💬</div>
+                                                <div class="item-content">
+                                                    <h4>Messages</h4>
+                                                    <p>3 new notifications</p>
+                                                </div>
+                                                <span>→</span>
+                                            </div>
+                                            <div class="list-item">
+                                                <div class="item-icon">🎯</div>
+                                                <div class="item-content">
+                                                    <h4>Goals</h4>
+                                                    <p>Track your progress</p>
+                                                </div>
+                                                <span>→</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="app-bottom-nav">
+                                        <div class="nav-item active">🏠</div>
+                                        <div class="nav-item">🔍</div>
+                                        <div class="nav-item">➕</div>
+                                        <div class="nav-item">💬</div>
+                                        <div class="nav-item">👤</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Premium App Mockup -->
+                                <div class="mockup-content" data-tier="premium">
+                                    <div class="app-header">
+                                        <div class="app-status-bar">
+                                            <span>9:41</span>
+                                            <span>⚡ 🔋 📶</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-content premium">
+                                        <div class="map-view">
+                                            <div class="map-placeholder">
+                                                <div class="location-pin">📍</div>
+                                                <p>Real-time Location Services</p>
+                                            </div>
+                                        </div>
+                                        <div class="premium-card">
+                                            <h3>Enterprise Features</h3>
+                                            <div class="feature-list">
+                                                <div class="feature">✓ Offline Mode</div>
+                                                <div class="feature">✓ Real-time Sync</div>
+                                                <div class="feature">✓ Advanced Analytics</div>
+                                                <div class="feature">✓ Team Collaboration</div>
+                                                <div class="feature">✓ API Integration</div>
+                                            </div>
+                                        </div>
+                                        <div class="floating-action">
+                                            <button class="fab">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="app-bottom-nav premium">
+                                        <div class="nav-item">🏠</div>
+                                        <div class="nav-item">📊</div>
+                                        <div class="nav-item active">🗺️</div>
+                                        <div class="nav-item">👥</div>
+                                        <div class="nav-item">⚙️</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="showcase-features">
+                <div class="feature-highlight">
+                    <h3>What's Included in Each Tier</h3>
+                    <div id="tier-features" class="tier-features-list">
+                        <!-- Features will be dynamically updated based on selection -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="web-dev" class="package-category">
         <div class="container">
             <h2>Website Development</h2>
@@ -317,5 +780,6 @@
             this.classList.toggle('active');
         });
     </script>
+    <script src="scripts/mockup-showcase.js"></script>
 </body>
 </html>
