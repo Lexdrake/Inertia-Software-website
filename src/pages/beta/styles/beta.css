@@ -44,6 +44,7 @@
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    color: white;
 }
 
 .hero-subtitle {
@@ -52,6 +53,7 @@
     max-width: 800px;
     margin: 0 auto;
     opacity: 0.95;
+    color: white;
 }
 
 .beta-info {

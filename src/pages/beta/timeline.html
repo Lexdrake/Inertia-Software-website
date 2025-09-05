@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Development Timeline - Inertia Planner</title>
-    <meta name="description" content="Complete development roadmap for Inertia Planner from beta to public launch.">
+    <meta name="description" content="Interactive timeline showing the complete development journey of Inertia Planner from concept to launch.">
     
     <link rel="canonical" href="https://useinertia.com/beta/timeline">
     <link rel="favicon" href="/favicon.ico">
@@ -43,305 +43,606 @@
                 <a href="/src/pages/beta/">Beta Home</a> → <span>Development Timeline</span>
             </div>
             <div class="hero-content">
-                <h1>Inertia Planner Development Timeline</h1>
-                <p>From beta testing to public launch - here's the complete roadmap</p>
+                <h1>The Journey to Inertia Planner</h1>
+                <p>From concept to beta - an interactive look at how we built an app to overcome inertia</p>
+                <div class="timeline-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot completed"></div>
+                        <span>Completed</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot current"></div>
+                        <span>Current Beta</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot future"></div>
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="timeline-content">
+    <section class="interactive-timeline">
         <div class="container">
-            <div class="timeline-overview">
-                <div class="overview-card">
-                    <h3>📍 Where We Are Now</h3>
-                    <p>Preparing for <strong>Beta v1.0</strong> launch with core functionality across all three life modes. You're here at the perfect time to help shape the app's development!</p>
+            <div class="timeline-container">
+                
+                <!-- Phase 1: Foundation -->
+                <div class="timeline-milestone completed" data-phase="1">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot completed"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Phase 1: Foundation</h3>
+                            <span class="milestone-status">Completed</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Building the core concepts: projects, habits, and basic planning</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-1')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-1')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-1 active">
+                            <h4>🛠️ What We Built</h4>
+                            <ul>
+                                <li><strong>Project System:</strong> Hierarchical structure with milestones and tasks</li>
+                                <li><strong>Habit Tracking:</strong> Time-based goals (maintain, increase, decrease)</li>
+                                <li><strong>Basic Planner:</strong> Simple scheduling and item management</li>
+                                <li><strong>Data Models:</strong> Core database structure for all future features</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content user-1">
+                            <h4>✨ Why It Mattered</h4>
+                            <ul>
+                                <li><strong>Actionable Goals:</strong> Break big projects into manageable pieces</li>
+                                <li><strong>Habit Formation:</strong> Build consistency with time-based tracking</li>
+                                <li><strong>Simple Planning:</strong> Know what to work on and when</li>
+                                <li><strong>Foundation:</strong> Core system that everything else builds upon</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Planning Evolution -->
+                <div class="timeline-milestone completed" data-phase="2">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot completed"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Phase 2: Planning Evolution</h3>
+                            <span class="milestone-status">Completed</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Enhanced planner with productivity reporting and better scheduling</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-2')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-2')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-2 active">
+                            <h4>🛠️ What We Built</h4>
+                            <ul>
+                                <li><strong>Productivity Reporting:</strong> Track completion rates and progress</li>
+                                <li><strong>Advanced Scheduling:</strong> Time slot validation and conflict detection</li>
+                                <li><strong>Item Management:</strong> Edit, reschedule, and organize planning items</li>
+                                <li><strong>Progress Tracking:</strong> Visual indicators of momentum and completion</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content user-2">
+                            <h4>✨ Why It Mattered</h4>
+                            <ul>
+                                <li><strong>Accountability:</strong> See your progress and stay motivated</li>
+                                <li><strong>Smart Scheduling:</strong> Avoid conflicts and optimize your time</li>
+                                <li><strong>Flexibility:</strong> Adapt your plans as life changes</li>
+                                <li><strong>Momentum Building:</strong> Visual progress to maintain forward motion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Three Modes Architecture -->
+                <div class="timeline-milestone completed" data-phase="3">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot completed"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Phase 3: Three Modes Revolution</h3>
+                            <span class="milestone-status">Completed</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Complete architectural rebuild around Student, Work, and Life modes</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-3')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-3')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-3 active">
+                            <h4>🛠️ What We Built</h4>
+                            <ul>
+                                <li><strong>Mode System:</strong> Separate contexts for different life areas</li>
+                                <li><strong>Unified Architecture:</strong> Shared planner across all modes</li>
+                                <li><strong>Mode Switching:</strong> Seamless transitions between contexts</li>
+                                <li><strong>Scalable Design:</strong> Foundation for mode-specific features</li>
+                            </ul>
+                            <div class="architecture-note">
+                                <strong>💡 Major Decision:</strong> This was a complete rebuild that broke many existing features, requiring extensive refactoring and bug fixes.
+                            </div>
+                        </div>
+                        <div class="tab-content user-3">
+                            <h4>✨ Why It Mattered</h4>
+                            <ul>
+                                <li><strong>Life Organization:</strong> Separate school, work, and personal planning</li>
+                                <li><strong>Context Switching:</strong> Focus on what matters right now</li>
+                                <li><strong>Unified View:</strong> See everything together when you need to</li>
+                                <li><strong>Flexible Usage:</strong> Use just one mode or all three</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Student Mode -->
+                <div class="timeline-milestone completed" data-phase="4">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot completed"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Phase 4: Student Mode</h3>
+                            <span class="milestone-status">Completed</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Academic planning with classes, assignments, and educational projects</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-4')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-4')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-4 active">
+                            <h4>🛠️ What We Built</h4>
+                            <ul>
+                                <li><strong>Classes System:</strong> Create classes with assignments and test prep</li>
+                                <li><strong>Academic Projects:</strong> Class-specific projects with milestones</li>
+                                <li><strong>Assignment Tracking:</strong> Due dates, priorities, and completion status</li>
+                                <li><strong>Academic Habits:</strong> Study routines and learning goals</li>
+                                <li><strong>Category System:</strong> Learning-focused item categorization</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content user-4">
+                            <h4>✨ Why It Mattered</h4>
+                            <ul>
+                                <li><strong>Academic Success:</strong> Never miss assignments or exams</li>
+                                <li><strong>Project Management:</strong> Break down big academic projects</li>
+                                <li><strong>Study Habits:</strong> Build consistent learning routines</li>
+                                <li><strong>Class Organization:</strong> Keep all course materials organized</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5: Work Mode -->
+                <div class="timeline-milestone completed" data-phase="5">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot completed"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Phase 5: Work Mode</h3>
+                            <span class="milestone-status">Completed</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Professional planning with expectations, work projects, and routines</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-5')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-5')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-5 active">
+                            <h4>🛠️ What We Built</h4>
+                            <ul>
+                                <li><strong>Expectations System:</strong> Cascading goals (annual → daily)</li>
+                                <li><strong>Check-in Scheduling:</strong> Regular progress reviews</li>
+                                <li><strong>Work Projects:</strong> Professional deliverables and milestones</li>
+                                <li><strong>Routines:</strong> Recurring work activities with fixed times</li>
+                                <li><strong>Professional Categories:</strong> Work-focused item organization</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content user-5">
+                            <h4>✨ Why It Mattered</h4>
+                            <ul>
+                                <li><strong>Career Growth:</strong> Track long-term professional goals</li>
+                                <li><strong>Accountability:</strong> Regular check-ins ensure progress</li>
+                                <li><strong>Project Delivery:</strong> Meet deadlines and deliverables</li>
+                                <li><strong>Work Rhythm:</strong> Establish productive daily routines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 6: Life Mode -->
+                <div class="timeline-milestone completed" data-phase="6">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot completed"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Phase 6: Life Mode Integration</h3>
+                            <span class="milestone-status">Completed</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Personal goal system combining projects and habits into unified goals</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-6')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-6')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-6 active">
+                            <h4>🛠️ What We Built</h4>
+                            <ul>
+                                <li><strong>Goals Integration:</strong> Projects and habits nested within goals</li>
+                                <li><strong>Personal Categories:</strong> Health, social, financial, personal development</li>
+                                <li><strong>Goal Tracking:</strong> Progress across multiple projects and habits</li>
+                                <li><strong>Life Balance:</strong> Comprehensive personal development system</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content user-6">
+                            <h4>✨ Why It Mattered</h4>
+                            <ul>
+                                <li><strong>Holistic Growth:</strong> Organize all aspects of personal development</li>
+                                <li><strong>Meaningful Goals:</strong> Connect daily actions to bigger purposes</li>
+                                <li><strong>Life Balance:</strong> Track health, relationships, and personal growth</li>
+                                <li><strong>Integrated Planning:</strong> See how personal goals fit with work and school</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 7: Advanced Planner -->
+                <div class="timeline-milestone completed" data-phase="7">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot completed"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Phase 7: Advanced Planning</h3>
+                            <span class="milestone-status">Completed</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>All Items page and batch scheduling for efficient planning</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-7')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-7')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-7 active">
+                            <h4>🛠️ What We Built</h4>
+                            <ul>
+                                <li><strong>All Items View:</strong> Unified view of everything across modes</li>
+                                <li><strong>Batch Scheduling:</strong> Select multiple items to schedule at once</li>
+                                <li><strong>Time Slot Validation:</strong> Green indicators for valid scheduling times</li>
+                                <li><strong>Category Filtering:</strong> View and schedule by item categories</li>
+                                <li><strong>Smart Scheduling:</strong> Conflict detection and resolution</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content user-7">
+                            <h4>✨ Why It Mattered</h4>
+                            <ul>
+                                <li><strong>Efficiency:</strong> Schedule multiple items quickly and easily</li>
+                                <li><strong>Overview:</strong> See everything you need to do in one place</li>
+                                <li><strong>Time Management:</strong> Optimal scheduling without conflicts</li>
+                                <li><strong>Flexibility:</strong> Adapt your schedule as priorities change</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 8: 3-Day View -->
+                <div class="timeline-milestone completed" data-phase="8">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot completed"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Phase 8: 3-Day View & Rescheduling</h3>
+                            <span class="milestone-status">Completed</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Daily planning view with easy rescheduling capabilities</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-8')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-8')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-8 active">
+                            <h4>🛠️ What We Built</h4>
+                            <ul>
+                                <li><strong>3-Day View:</strong> Focus on today, tomorrow, and the next day</li>
+                                <li><strong>Quick Rescheduling:</strong> Click and reschedule items easily</li>
+                                <li><strong>Item Details:</strong> View and edit item information inline</li>
+                                <li><strong>Daily Overview:</strong> See your schedule at a glance</li>
+                                <li><strong>Responsive Design:</strong> Works perfectly on mobile devices</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content user-8">
+                            <h4>✨ Why It Mattered</h4>
+                            <ul>
+                                <li><strong>Daily Focus:</strong> Stay focused on what's immediately important</li>
+                                <li><strong>Quick Adjustments:</strong> Adapt to changes without friction</li>
+                                <li><strong>Mobile Planning:</strong> Manage your schedule on the go</li>
+                                <li><strong>Stress Reduction:</strong> Clear view of upcoming commitments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 9: Advanced Reporting -->
+                <div class="timeline-milestone completed" data-phase="9">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot completed"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Phase 9: Advanced Reporting</h3>
+                            <span class="milestone-status">Completed</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Enhanced home screen and productivity reporting center</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-9')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-9')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-9 active">
+                            <h4>🛠️ What We Built</h4>
+                            <ul>
+                                <li><strong>Home Screen Dashboard:</strong> Daily overview and quick actions</li>
+                                <li><strong>Productivity Center:</strong> Comprehensive progress tracking</li>
+                                <li><strong>Item Reporting:</strong> Mark tasks complete, track habits</li>
+                                <li><strong>Progress Analytics:</strong> Visual indicators of momentum</li>
+                                <li><strong>Report History:</strong> Historical view of completed work</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content user-9">
+                            <h4>✨ Why It Mattered</h4>
+                            <ul>
+                                <li><strong>Daily Clarity:</strong> Start each day knowing what's important</li>
+                                <li><strong>Progress Visibility:</strong> See your momentum and achievements</li>
+                                <li><strong>Motivation:</strong> Visual progress to maintain forward motion</li>
+                                <li><strong>Historical Insight:</strong> Reflect on what you've accomplished</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Phase: Beta v1.0 -->
+                <div class="timeline-milestone current" data-phase="current">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot current"></div>
+                        <div class="milestone-line"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Beta v1.0 - Polish & Testing</h3>
+                            <span class="milestone-status current">Current</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Bug fixes, settings implementation, and beta testing with real users</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-current')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-current')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-current active">
+                            <h4>🛠️ What We're Doing</h4>
+                            <ul>
+                                <li><strong>Bug Fixing:</strong> Resolving issues found during development</li>
+                                <li><strong>Settings System:</strong> User preferences and customization options</li>
+                                <li><strong>Performance Optimization:</strong> Speed and reliability improvements</li>
+                                <li><strong>User Testing:</strong> Real-world feedback from beta users</li>
+                                <li><strong>Polish:</strong> UI/UX refinements and edge case handling</li>
+                            </ul>
+                            <div class="beta-note">
+                                <strong>🧪 You Are Here:</strong> You're helping test all the features built in phases 1-9 and providing feedback for improvements!
+                            </div>
+                        </div>
+                        <div class="tab-content user-current">
+                            <h4>✨ Why It Matters</h4>
+                            <ul>
+                                <li><strong>Reliability:</strong> A stable app that works when you need it</li>
+                                <li><strong>Personalization:</strong> Customize the app to fit your workflow</li>
+                                <li><strong>Real-World Ready:</strong> Tested with actual daily use cases</li>
+                                <li><strong>User-Driven:</strong> Improvements based on real user feedback</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Phase: Beta v2.0 -->
+                <div class="timeline-milestone future" data-phase="future">
+                    <div class="milestone-marker">
+                        <div class="milestone-dot future"></div>
+                    </div>
+                    <div class="milestone-card" onclick="toggleMilestone(this)">
+                        <div class="milestone-header">
+                            <h3>Beta v2.0 - Social & Smart Features</h3>
+                            <span class="milestone-status future">Coming Soon</span>
+                            <div class="expand-icon">+</div>
+                        </div>
+                        <div class="milestone-preview">
+                            <p>Events, social features, collaboration, and AI-powered smart scheduling</p>
+                        </div>
+                    </div>
+                    <div class="milestone-details" style="display: none;">
+                        <div class="details-tabs">
+                            <button class="tab-btn active" onclick="switchTab(this, 'technical-future')">Technical</button>
+                            <button class="tab-btn" onclick="switchTab(this, 'user-future')">User Impact</button>
+                        </div>
+                        <div class="tab-content technical-future active">
+                            <h4>🛠️ What's Coming</h4>
+                            <div class="future-phases">
+                                <div class="future-phase">
+                                    <h5>Events & Calendar</h5>
+                                    <ul>
+                                        <li>Events calendar with holidays and important dates</li>
+                                        <li>Vacation planning with memory check-ins</li>
+                                    </ul>
+                                </div>
+                                <div class="future-phase">
+                                    <h5>Social Features</h5>
+                                    <ul>
+                                        <li>Groups and group projects (Student mode)</li>
+                                        <li>Friends system and social feed</li>
+                                        <li>Shared calendars and social events</li>
+                                        <li>Teams collaboration (Work mode)</li>
+                                    </ul>
+                                </div>
+                                <div class="future-phase">
+                                    <h5>Smart Features</h5>
+                                    <ul>
+                                        <li>Smart goal creation with AI assistance</li>
+                                        <li>Autofill scheduling based on preferences</li>
+                                        <li>Move mode with drag-and-drop rescheduling</li>
+                                        <li>Planner sections with category restrictions</li>
+                                        <li>Smart-schedule with GPT integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content user-future">
+                            <h4>✨ The Future Vision</h4>
+                            <ul>
+                                <li><strong>Life Integration:</strong> Manage events, vacations, and special occasions</li>
+                                <li><strong>Social Connection:</strong> Collaborate with friends, family, and colleagues</li>
+                                <li><strong>AI-Powered:</strong> Intelligent suggestions and automated scheduling</li>
+                                <li><strong>Effortless Planning:</strong> The app learns your preferences and helps you plan</li>
+                                <li><strong>Complete System:</strong> Everything you need to organize your entire life</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-notes">
+        <div class="container">
+            <div class="development-reality">
+                <div class="reality-card">
+                    <h3>🔧 The Reality of Development</h3>
+                    <p>Building Inertia Planner wasn't a straight line. Throughout every phase, there were:</p>
+                    <div class="reality-grid">
+                        <div class="reality-item">
+                            <div class="reality-icon">🐛</div>
+                            <h4>Constant Bug Fixes</h4>
+                            <p>New features often broke existing functionality, requiring extensive debugging and refactoring</p>
+                        </div>
+                        <div class="reality-item">
+                            <div class="reality-icon">⚙️</div>
+                            <h4>Settings Everywhere</h4>
+                            <p>User preferences and settings were added throughout development as we discovered what needed to be customizable</p>
+                        </div>
+                        <div class="reality-item">
+                            <div class="reality-icon">🔄</div>
+                            <h4>Feature Interdependencies</h4>
+                            <p>Adding new features required updating existing ones, creating cascading changes throughout the app</p>
+                        </div>
+                        <div class="reality-item">
+                            <div class="reality-icon">🧪</div>
+                            <h4>Iterative Design</h4>
+                            <p>Features were built, tested, rebuilt, and refined based on real-world usage and feedback</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="development-timeline">
-                <!-- Phase 1: Beta v1.0 -->
-                <div class="timeline-phase current">
-                    <div class="phase-marker">
-                        <div class="phase-dot current"></div>
-                        <div class="phase-line"></div>
-                    </div>
-                    <div class="phase-content">
-                        <div class="phase-header">
-                            <h2>🚀 Beta v1.0 - Foundation (Launching Soon)</h2>
-                            <div class="phase-meta">
-                                <span class="duration">Duration: ~3 weeks</span>
-                                <span class="status launching">Launching Soon</span>
-                            </div>
+            <div class="category-system-explanation">
+                <div class="system-card">
+                    <h3>🏷️ The Category System</h3>
+                    <p>Throughout development, we built a comprehensive categorization system that powers many features:</p>
+                    <div class="categories-grid">
+                        <div class="category-item work">
+                            <h4>Work</h4>
+                            <p>Professional tasks and career goals</p>
                         </div>
-                        
-                        <p class="phase-description">
-                            The core Inertia Planner experience with essential features for managing your student life, work, and personal goals. This version focuses on the fundamental planning and scheduling functionality.
-                        </p>
-
-                        <div class="features-grid">
-                            <div class="mode-features">
-                                <h4>🎓 Student Mode</h4>
-                                <div class="feature-category">
-                                    <h5>Core Features</h5>
-                                    <ul>
-                                        <li>✅ Create and manage classes</li>
-                                        <li>✅ Add assignments and test prep items to classes</li>
-                                        <li>✅ Academic project management with milestones and tasks</li>
-                                        <li>✅ Academic habit tracking (time-based goals)</li>
-                                    </ul>
-                                </div>
-                                <div class="available-tabs">
-                                    <strong>Available Tabs:</strong> School • Habits • Home • Planner
-                                </div>
-                            </div>
-
-                            <div class="mode-features">
-                                <h4>💼 Work Mode</h4>
-                                <div class="feature-category">
-                                    <h5>Core Features</h5>
-                                    <ul>
-                                        <li>✅ Professional expectation tracking (deliverable & metric-based)</li>
-                                        <li>✅ Cascading expectations (annual → quarterly → monthly → weekly → daily)</li>
-                                        <li>✅ Work project management with milestones and tasks</li>
-                                        <li>✅ Work routine management (recurring scheduled items)</li>
-                                    </ul>
-                                </div>
-                                <div class="available-tabs">
-                                    <strong>Available Tabs:</strong> Work • Routines • Home • Planner
-                                </div>
-                            </div>
-
-                            <div class="mode-features">
-                                <h4>🌟 Life Mode</h4>
-                                <div class="feature-category">
-                                    <h5>Core Features</h5>
-                                    <ul>
-                                        <li>✅ Personal goal setting with nested projects and habits</li>
-                                        <li>✅ Actionable goal breakdown into manageable tasks</li>
-                                        <li>✅ Life habit tracking integrated with goals</li>
-                                    </ul>
-                                </div>
-                                <div class="available-tabs">
-                                    <strong>Available Tabs:</strong> Goals • Home • Planner
-                                </div>
-                            </div>
-
-                            <div class="mode-features planner-features">
-                                <h4>📅 Central Planner (All Modes)</h4>
-                                <div class="feature-category">
-                                    <h5>Planning & Scheduling</h5>
-                                    <ul>
-                                        <li>✅ All Items tab - view everything across modes</li>
-                                        <li>✅ Batch scheduling - select multiple items to schedule</li>
-                                        <li>✅ Weekly view scheduling with green time slot indicators</li>
-                                        <li>✅ 3-day planner view with item management</li>
-                                        <li>✅ Productivity tab for progress reporting</li>
-                                        <li>✅ Task/assignment completion tracking</li>
-                                        <li>✅ Habit reporting (with omit option)</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="category-item health">
+                            <h4>Health</h4>
+                            <p>Physical and mental wellness activities</p>
                         </div>
-
-                        <div class="version-updates">
-                            <div class="update-note">
-                                <h5>🔄 Expected Sub-Versions</h5>
-                                <p>During the 3-week beta period, you may see updates like v1.1, v1.2, v1.3, etc. These will focus on:</p>
-                                <ul>
-                                    <li>🐛 Bug fixes based on your reports</li>
-                                    <li>🎨 UI/UX improvements from your feedback</li>
-                                    <li>⚡ Performance optimizations</li>
-                                    <li>🔧 Minor feature tweaks and refinements</li>
-                                </ul>
-                                <p><em>The final version number (v1.X) depends on what we discover together during testing!</em></p>
-                            </div>
+                        <div class="category-item learning">
+                            <h4>Learning</h4>
+                            <p>Education, skill development, and knowledge</p>
+                        </div>
+                        <div class="category-item rest">
+                            <h4>Rest</h4>
+                            <p>Relaxation, sleep, and downtime</p>
+                        </div>
+                        <div class="category-item social">
+                            <h4>Social</h4>
+                            <p>Relationships, family, and community</p>
+                        </div>
+                        <div class="category-item personal">
+                            <h4>Personal</h4>
+                            <p>Personal development and hobbies</p>
+                        </div>
+                        <div class="category-item financial">
+                            <h4>Financial</h4>
+                            <p>Money management and financial goals</p>
+                        </div>
+                        <div class="category-item other">
+                            <h4>Other</h4>
+                            <p>Miscellaneous activities (default)</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- Phase 2: Beta v2.0 -->
-                <div class="timeline-phase future">
-                    <div class="phase-marker">
-                        <div class="phase-dot future"></div>
-                        <div class="phase-line"></div>
-                    </div>
-                    <div class="phase-content">
-                        <div class="phase-header">
-                            <h2>🔮 Beta v2.0 - Advanced Features</h2>
-                            <div class="phase-meta">
-                                <span class="duration">Duration: TBD after v1.0</span>
-                                <span class="status upcoming">Upcoming</span>
-                            </div>
-                        </div>
-                        
-                        <p class="phase-description">
-                            Building on the solid foundation of v1.0, this phase introduces collaboration features, advanced life management tools, and social connectivity.
-                        </p>
-
-                        <div class="features-grid">
-                            <div class="mode-features">
-                                <h4>👥 Collaboration Features</h4>
-                                <div class="feature-category">
-                                    <h5>Student Groups</h5>
-                                    <ul>
-                                        <li>🔄 Create groups between users</li>
-                                        <li>🔄 Collaborative project creation within groups</li>
-                                        <li>🔄 Shared task management and progress tracking</li>
-                                    </ul>
-                                    <h5>Work Teams</h5>
-                                    <ul>
-                                        <li>🔄 Team creation with cascading expectations architecture</li>
-                                        <li>🔄 Forum-style messaging system</li>
-                                        <li>🔄 Nested topic replies (up to 4 levels deep)</li>
-                                        <li>🔄 Long message length support</li>
-                                    </ul>
-                                </div>
-                                <div class="new-tabs">
-                                    <strong>New Tabs:</strong> Groups (Student) • Teams (Work)
-                                </div>
-                            </div>
-
-                            <div class="mode-features">
-                                <h4>🌟 Life Mode Expansion</h4>
-                                <div class="feature-category">
-                                    <h5>Smart Goal Creation</h5>
-                                    <ul>
-                                        <li>🔄 AI-powered goal creation assistance</li>
-                                        <li>🔄 Automatic project and habit generation based on goals</li>
-                                        <li>🔄 Personalized recommendations and strategies</li>
-                                    </ul>
-                                    <h5>Event Management</h5>
-                                    <ul>
-                                        <li>🔄 Holiday and important date calendar</li>
-                                        <li>🔄 Vacation planning functionality</li>
-                                        <li>🔄 Check-in system for memories and notes</li>
-                                        <li>🔄 Option to clear planner items during vacations</li>
-                                    </ul>
-                                </div>
-                                <div class="new-tabs">
-                                    <strong>New Tab:</strong> Events (calendar view and vacation planning)
-                                </div>
-                            </div>
-
-                            <div class="mode-features">
-                                <h4>🌐 Social Features</h4>
-                                <div class="feature-category">
-                                    <h5>Friends & Social Feed</h5>
-                                    <ul>
-                                        <li>🔄 Add friends and manage friends list</li>
-                                        <li>🔄 Social feed with post sharing</li>
-                                        <li>🔄 Calendar sharing between friends</li>
-                                    </ul>
-                                    <h5>Group Calendars</h5>
-                                    <ul>
-                                        <li>🔄 Create calendar groups with friends</li>
-                                        <li>🔄 View shared free time blocks across group members</li>
-                                        <li>🔄 Color-coded availability (green: full day, orange: 6+ hours, red: 2-6 hours)</li>
-                                    </ul>
-                                    <h5>Social Events</h5>
-                                    <ul>
-                                        <li>🔄 Create and manage social events</li>
-                                        <li>🔄 Invite groups and individual friends</li>
-                                        <li>🔄 Open invite toggle (friends can invite friends)</li>
-                                        <li>🔄 RSVP system with accept/decline/unsure options</li>
-                                        <li>🔄 Host announcements and Q&A messaging</li>
-                                    </ul>
-                                </div>
-                                <div class="new-tabs">
-                                    <strong>New Tab:</strong> Social (feed, group calendars, social events)
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="version-updates">
-                            <div class="update-note">
-                                <h5>🔄 Expected Sub-Versions</h5>
-                                <p>Similar to v1.0, v2.0 will likely have multiple iterations (v2.1, v2.2, etc.) as we:</p>
-                                <ul>
-                                    <li>🐛 Fix any issues with new collaboration features</li>
-                                    <li>🎨 Refine the social and event interfaces</li>
-                                    <li>⚡ Optimize performance with increased data complexity</li>
-                                    <li>🔧 Perfect the smart goal creation system</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 3: Public Launch -->
-                <div class="timeline-phase launch">
-                    <div class="phase-marker">
-                        <div class="phase-dot launch"></div>
-                    </div>
-                    <div class="phase-content">
-                        <div class="phase-header">
-                            <h2>🎉 Public Launch - Complete Experience</h2>
-                            <div class="phase-meta">
-                                <span class="status future">Future</span>
-                            </div>
-                        </div>
-                        
-                        <p class="phase-description">
-                            The complete Inertia Planner experience, refined and perfected through the beta program with your invaluable feedback. Ready for everyone to overcome inertia and stay in motion toward their goals.
-                        </p>
-
-                        <div class="launch-highlights">
-                            <div class="highlight-card">
-                                <h4>🎯 Complete Feature Set</h4>
-                                <p>All features from both beta phases, polished and optimized based on real-world usage and feedback.</p>
-                            </div>
-                            
-                            <div class="highlight-card">
-                                <h4>🧠 Battle-Tested</h4>
-                                <p>Proven through extensive beta testing with real users managing real student, work, and life challenges.</p>
-                            </div>
-                            
-                            <div class="highlight-card">
-                                <h4>🚀 Ready to Scale</h4>
-                                <p>Optimized for performance, accessibility, and user experience across all platforms and use cases.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-footer">
-                <div class="beta-importance">
-                    <h3>🎯 Why Your Beta Participation Matters</h3>
-                    <div class="importance-grid">
-                        <div class="importance-card">
-                            <div class="importance-icon">🔍</div>
-                            <h4>Real-World Testing</h4>
-                            <p>You're using the app in actual daily scenarios, finding issues and use cases that can't be discovered in development.</p>
-                        </div>
-                        
-                        <div class="importance-card">
-                            <div class="importance-icon">💡</div>
-                            <h4>Feature Direction</h4>
-                            <p>Your feedback directly influences which features get prioritized, refined, or reconsidered.</p>
-                        </div>
-                        
-                        <div class="importance-card">
-                            <div class="importance-icon">🎨</div>
-                            <h4>User Experience</h4>
-                            <p>Your insights help make the app more intuitive and aligned with how people actually want to organize their lives.</p>
-                        </div>
-                        
-                        <div class="importance-card">
-                            <div class="importance-icon">🛠️</div>
-                            <h4>Quality Assurance</h4>
-                            <p>Every bug you report and every suggestion you make helps create a more stable and useful final product.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="next-steps">
-                    <h3>🚀 Ready to Get Started?</h3>
-                    <p>Join the beta program and be part of shaping Inertia Planner's development!</p>
-                    <div class="action-buttons">
-                        <a href="/src/pages/beta/getting-started.html" class="btn btn-primary">Get Started Guide</a>
-                        <a href="/src/pages/beta/#feedback" class="btn btn-secondary">Submit Feedback</a>
-                        <a href="mailto:useinertia@gmail.com" class="btn btn-secondary">Send Email</a>
+                    <div class="system-features">
+                        <h4>How Categories Power the App:</h4>
+                        <ul>
+                            <li><strong>Planner Sections:</strong> Create time blocks where only certain categories can be scheduled</li>
+                            <li><strong>Difficulty Settings:</strong> Set caps based on item difficulties (1-5) and durations</li>
+                            <li><strong>Smart Scheduling:</strong> AI considers categories when creating optimal schedules</li>
+                            <li><strong>Progress Tracking:</strong> Monitor progress across different life areas</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -387,6 +688,41 @@
             document.querySelector('.nav-menu').classList.toggle('active');
             this.classList.toggle('active');
         });
+
+        function toggleMilestone(element) {
+            const milestone = element.closest('.timeline-milestone');
+            const details = milestone.querySelector('.milestone-details');
+            const expandIcon = element.querySelector('.expand-icon');
+            
+            if (details.style.display === 'none' || !details.style.display) {
+                details.style.display = 'block';
+                expandIcon.textContent = '−';
+                expandIcon.style.transform = 'rotate(180deg)';
+            } else {
+                details.style.display = 'none';
+                expandIcon.textContent = '+';
+                expandIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function switchTab(button, tabId) {
+            const details = button.closest('.milestone-details');
+            const allTabs = details.querySelectorAll('.tab-btn');
+            const allContent = details.querySelectorAll('.tab-content');
+            
+            // Remove active class from all tabs and content
+            allTabs.forEach(tab => tab.classList.remove('active'));
+            allContent.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            button.classList.add('active');
+            
+            // Show corresponding content
+            const targetContent = details.querySelector('.' + tabId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        }
     </script>
 
     <style>
@@ -405,7 +741,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
             opacity: 0.3;
         }
         
@@ -431,62 +767,71 @@
             font-weight: 700;
             margin-bottom: 1rem;
             line-height: 1.2;
+            color: white;
         }
         
         .hero-content p {
             font-size: 1.25rem;
             opacity: 0.9;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 2rem;
+            color: white;
         }
         
-        .timeline-content {
+        .timeline-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .legend-dot.completed {
+            background: #10b981;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+        }
+        
+        .legend-dot.current {
+            background: #f59e0b;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+        }
+        
+        .legend-dot.future {
+            background: #6366f1;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+        }
+        
+        .interactive-timeline {
             padding: 6rem 0;
+            background: var(--bg-light);
         }
         
-        .timeline-overview {
-            margin-bottom: 4rem;
-            text-align: center;
-        }
-        
-        .overview-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .overview-card h3 {
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .overview-card p {
-            color: var(--text-muted);
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
-        
-        .development-timeline {
+        .timeline-container {
             max-width: 1000px;
             margin: 0 auto;
-        }
-        
-        .timeline-phase {
-            display: flex;
-            margin-bottom: 4rem;
             position: relative;
         }
         
-        .timeline-phase:last-child .phase-line {
-            display: none;
+        .timeline-milestone {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
         }
         
-        .phase-marker {
+        .milestone-marker {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -494,343 +839,420 @@
             position: relative;
         }
         
-        .phase-dot {
+        .milestone-dot {
             width: 20px;
             height: 20px;
             border-radius: 50%;
             position: relative;
             z-index: 2;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
         
-        .phase-dot.current {
+        .milestone-dot:hover {
+            transform: scale(1.2);
+        }
+        
+        .milestone-dot.completed {
             background: #10b981;
             box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
         }
         
-        .phase-dot.future {
+        .milestone-dot.current {
+            background: #f59e0b;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .milestone-dot.future {
             background: #6366f1;
             box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
         }
         
-        .phase-dot.launch {
-            background: #f59e0b;
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
-        }
-        
-        .phase-line {
+        .milestone-line {
             width: 2px;
-            height: 120px;
+            height: 150px;
             background: linear-gradient(to bottom, #e5e7eb, transparent);
             margin-top: 1rem;
         }
         
-        .phase-content {
+        .timeline-milestone:last-child .milestone-line {
+            display: none;
+        }
+        
+        .milestone-card {
             flex: 1;
             background: white;
             border-radius: 12px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
             overflow: hidden;
         }
         
-        .timeline-phase.current .phase-content {
+        .milestone-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-milestone.completed .milestone-card {
             border-left: 4px solid #10b981;
         }
         
-        .timeline-phase.future .phase-content {
+        .timeline-milestone.current .milestone-card {
+            border-left: 4px solid #f59e0b;
+            background: linear-gradient(135deg, #fef3c7, #ffffff);
+        }
+        
+        .timeline-milestone.future .milestone-card {
             border-left: 4px solid #6366f1;
             opacity: 0.95;
         }
         
-        .timeline-phase.launch .phase-content {
-            border-left: 4px solid #f59e0b;
-            background: linear-gradient(135deg, #fff7ed, #ffffff);
-        }
-        
-        .phase-header {
-            padding: 2.5rem 3rem 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .phase-header h2 {
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-        
-        .phase-meta {
+        .milestone-header {
+            padding: 2rem 2rem 1rem;
             display: flex;
-            gap: 1rem;
-            align-items: center;
+            justify-content: space-between;
+            align-items: flex-start;
         }
         
-        .duration {
-            background: var(--bg-light);
+        .milestone-header h3 {
+            color: var(--text-dark);
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            flex: 1;
+        }
+        
+        .milestone-status {
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
+            font-size: 0.8rem;
             font-weight: 500;
+            margin: 0 1rem;
         }
         
-        .status {
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .status.launching {
-            background: #d1fae5;
-            color: #065f46;
-        }
-        
-        .status.upcoming {
-            background: #e0e7ff;
-            color: #3730a3;
-        }
-        
-        .status.future {
+        .milestone-status.current {
             background: #fef3c7;
             color: #92400e;
         }
         
-        .phase-description {
-            padding: 2rem 3rem;
+        .milestone-status.future {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+        
+        .expand-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        .milestone-preview {
+            padding: 0 2rem 2rem;
+        }
+        
+        .milestone-preview p {
             color: var(--text-muted);
-            line-height: 1.7;
-            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .milestone-details {
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-light);
+        }
+        
+        .details-tabs {
+            display: flex;
             border-bottom: 1px solid var(--border-color);
         }
         
-        .features-grid {
-            padding: 2rem 3rem;
+        .tab-btn {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         
-        .mode-features {
-            margin-bottom: 2.5rem;
-            background: var(--bg-light);
-            border-radius: 8px;
+        .tab-btn.active {
+            color: var(--primary-color);
+            background: white;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
             padding: 2rem;
-            border: 1px solid var(--border-color);
         }
         
-        .mode-features.planner-features {
-            background: linear-gradient(135deg, #f0f9ff, #ffffff);
-            border-color: #0ea5e9;
+        .tab-content.active {
+            display: block;
         }
         
-        .mode-features h4 {
+        .tab-content h4 {
             color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
         
-        .feature-category {
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-category h5 {
-            color: var(--text-dark);
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .feature-category ul {
+        .tab-content ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
         
-        .feature-category li {
-            padding: 0.4rem 0;
+        .tab-content li {
+            padding: 0.5rem 0;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         
-        .feature-category li:last-child {
-            margin-bottom: 0;
+        .tab-content li:last-child {
+            border-bottom: none;
         }
         
-        .available-tabs, .new-tabs {
-            background: white;
+        .tab-content strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .architecture-note, .beta-note {
+            margin-top: 1.5rem;
             padding: 1rem;
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
             border-radius: 6px;
             font-size: 0.9rem;
-            color: var(--text-muted);
+        }
+        
+        .beta-note {
+            background: #dbeafe;
+            border-color: #93c5fd;
+        }
+        
+        .future-phases {
             margin-top: 1rem;
         }
         
-        .new-tabs {
-            background: #fef3c7;
-            color: #92400e;
+        .future-phase {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
         }
         
-        .version-updates {
-            padding: 2rem 3rem;
-            border-top: 1px solid var(--border-color);
+        .future-phase:last-child {
+            border-bottom: none;
         }
         
-        .update-note {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 2rem;
-        }
-        
-        .update-note h5 {
+        .future-phase h5 {
             color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .update-note ul {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-        
-        .update-note li {
-            color: var(--text-muted);
-            line-height: 1.6;
             margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
         }
         
-        .launch-highlights {
-            padding: 2rem 3rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .highlight-card {
+        .timeline-notes {
+            padding: 6rem 0;
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            text-align: center;
         }
         
-        .highlight-card h4 {
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .timeline-footer {
-            margin-top: 6rem;
-        }
-        
-        .beta-importance {
+        .development-reality, .category-system-explanation {
             margin-bottom: 4rem;
         }
         
-        .beta-importance h3 {
-            text-align: center;
-            color: var(--text-dark);
-            margin-bottom: 3rem;
-            font-size: 2rem;
+        .reality-card, .system-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 3rem;
+            border: 1px solid var(--border-color);
         }
         
-        .importance-grid {
+        .reality-card h3, .system-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .reality-card p, .system-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .reality-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
         
-        .importance-card {
+        .reality-item {
             background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
+            padding: 2rem;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         
-        .importance-icon {
-            font-size: 3rem;
+        .reality-icon {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             display: block;
         }
         
-        .importance-card h4 {
+        .reality-item h4 {
             color: var(--text-dark);
             margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .importance-card p {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-        
-        .next-steps {
-            background: var(--bg-light);
-            padding: 4rem;
-            border-radius: 16px;
-            text-align: center;
-        }
-        
-        .next-steps h3 {
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-        
-        .next-steps p {
-            color: var(--text-muted);
             font-size: 1.1rem;
-            line-height: 1.6;
+        }
+        
+        .reality-item p {
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             margin-bottom: 2rem;
         }
         
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .category-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .category-item h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .category-item p {
+            margin: 0;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+        
+        .category-item.work { border-left: 4px solid #3b82f6; }
+        .category-item.work h4 { color: #3b82f6; }
+        
+        .category-item.health { border-left: 4px solid #10b981; }
+        .category-item.health h4 { color: #10b981; }
+        
+        .category-item.learning { border-left: 4px solid #8b5cf6; }
+        .category-item.learning h4 { color: #8b5cf6; }
+        
+        .category-item.rest { border-left: 4px solid #06b6d4; }
+        .category-item.rest h4 { color: #06b6d4; }
+        
+        .category-item.social { border-left: 4px solid #f59e0b; }
+        .category-item.social h4 { color: #f59e0b; }
+        
+        .category-item.personal { border-left: 4px solid #ec4899; }
+        .category-item.personal h4 { color: #ec4899; }
+        
+        .category-item.financial { border-left: 4px solid #10b981; }
+        .category-item.financial h4 { color: #10b981; }
+        
+        .category-item.other { border-left: 4px solid #6b7280; }
+        .category-item.other h4 { color: #6b7280; }
+        
+        .system-features {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .system-features h4 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .system-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .system-features li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        .system-features strong {
+            color: var(--text-dark);
+            font-weight: 600;
         }
         
         @media (max-width: 768px) {
-            .timeline-phase {
+            .timeline-milestone {
                 flex-direction: column;
             }
             
-            .phase-marker {
+            .milestone-marker {
                 flex-direction: row;
                 margin-bottom: 2rem;
                 margin-right: 0;
             }
             
-            .phase-line {
+            .milestone-line {
                 height: 2px;
                 width: 60px;
                 margin-top: 0;
                 margin-left: 1rem;
             }
             
-            .phase-header,
-            .phase-description,
-            .features-grid,
-            .version-updates,
-            .launch-highlights {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-            
-            .importance-grid {
+            .reality-grid {
                 grid-template-columns: 1fr;
             }
             
-            .action-buttons {
-                flex-direction: column;
-                align-items: center;
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline-legend {
+                gap: 1rem;
             }
             
             .hero-content h1 {
                 font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
