@@ -375,11 +375,23 @@ function createBetaAgreementForm() {
 function hideForm() {
     const formsSection = document.getElementById('formsSection');
     formsSection.style.display = 'none';
+    
+    // Scroll back to the feedback section for better UX
+    const feedbackSection = document.querySelector('.feedback-section');
+    if (feedbackSection) {
+        feedbackSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 function hideAgreementForm() {
     const agreementFormSection = document.getElementById('agreementFormSection');
     agreementFormSection.style.display = 'none';
+    
+    // Scroll back to the beta agreement section for better UX
+    const betaAgreementSection = document.querySelector('.beta-agreement-section');
+    if (betaAgreementSection) {
+        betaAgreementSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 function handleFormSubmit(event) {
