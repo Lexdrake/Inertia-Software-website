@@ -1,16 +1,8 @@
 // Simplified Packages Service Form - Uses shared utilities
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Ensure FormUtils is available before proceeding
-    if (typeof window.FormUtils === 'undefined') {
-        // Try again after a short delay to ensure FormUtils is loaded
-        setTimeout(function() {
-            replaceEmailLinksWithFormTriggers();
-        }, 100);
-    } else {
-        // Replace all email links with form triggers
-        replaceEmailLinksWithFormTriggers();
-    }
+    // Replace all email links with form triggers
+    replaceEmailLinksWithFormTriggers();
 });
 
 function replaceEmailLinksWithFormTriggers() {
@@ -62,14 +54,16 @@ function replaceEmailLinksWithFormTriggers() {
 }
 
 function showPackageForm(packageName, packagePrice) {
-    const isCustom = packageName.includes('Custom');
+    const formsSection = document.getElementById('packagesFormSection');
+    const formContainer = formsSection.querySelector('.packages-form-container');
     
-    // Store context for better UX on close
-    FormUtils.packageContext = {
-        packageName: packageName,
-        isWebPackage: packageName.includes('Starter') || packageName.includes('Professional') || packageName.includes('E-Commerce') || packageName.includes('Enterprise'),
-        isMobilePackage: packageName.includes('MVP') || packageName.includes('Standard') || packageName.includes('Premium') || packageName.includes('Maintenance')
-    };
+    // Show the forms section
+    formsSection.style.display = 'block';
+    
+    // Clear existing content
+    formContainer.innerHTML = '';
+    
+    const isCustom = packageName.includes('Custom');
     
     const formHTML = `
         <div class="form-header">
@@ -82,7 +76,39 @@ function showPackageForm(packageName, packagePrice) {
         </div>
         
         <form class="service-inquiry-form" data-package="${packageName}">
-            ${FormUtils.generateContactSection()}
+            <!-- Contact Information -->
+            <div class="form-section">
+                <h3>Contact Information</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Your company or organization">
+                </div>
+            </div>
             
             <!-- Project Details -->
             <div class="form-section">
@@ -90,7 +116,7 @@ function showPackageForm(packageName, packagePrice) {
                 
                 <div class="form-group">
                     <label for="projectType">Project Type *</label>
-                    <select id="projectType" name="projectType" required onchange="FormUtils.updateProjectFields(this.value)">
+                    <select id="projectType" name="projectType" required onchange="updateProjectFields(this.value)">
                         <option value="">Select project type</option>
                         <option value="new-website" ${packageName.includes('Starter') || packageName.includes('Professional') ? 'selected' : ''}>New Website</option>
                         <option value="website-redesign">Website Redesign</option>
@@ -156,7 +182,43 @@ function showPackageForm(packageName, packagePrice) {
                         placeholder="List any websites or apps you like or compete with"></textarea>
                 </div>
                 
-                ${FormUtils.generateFeaturesSection()}
+                <div class="form-group">
+                    <label>Specific Features Needed (check all that apply)</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="user-accounts">
+                            <span>User Accounts/Login</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="payment-processing">
+                            <span>Payment Processing</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="booking-system">
+                            <span>Booking/Scheduling</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="cms">
+                            <span>Content Management</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="analytics">
+                            <span>Analytics Dashboard</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="api-integration">
+                            <span>API Integrations</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="multi-language">
+                            <span>Multi-language Support</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="real-time">
+                            <span>Real-time Features</span>
+                        </label>
+                    </div>
+                </div>
                 
                 <div class="form-group">
                     <label for="additionalNotes">Additional Notes or Questions</label>
@@ -177,26 +239,186 @@ function showPackageForm(packageName, packagePrice) {
                 </div>
             </div>
             
-            ${FormUtils.generateFooterSection()}
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-large">Submit Inquiry</button>
+                <button type="button" class="btn btn-secondary" onclick="hidePackageForm()">Cancel</button>
+            </div>
+            
+            <p class="form-note">
+                By submitting this form, you agree to our 
+                <a href="/src/pages/legal/privacy-policy.html" target="_blank">Privacy Policy</a> and 
+                <a href="/src/pages/legal/terms.html" target="_blank">Terms of Service</a>.
+                We'll respond within 24 hours.
+            </p>
         </form>
     `;
     
-    // Add additional metadata before showing
-    const formDataHandler = function(event) {
-        const form = event.target;
-        const formData = new FormData(form);
-        formData.append('package', packageName);
-        formData.append('packagePrice', packagePrice);
-        formData.append('source', 'Service Packages Page');
-        
-        // Call the original handler with our custom data
-        FormUtils.handleFormSubmit.call(FormUtils, event);
+    formContainer.innerHTML = formHTML;
+    
+    // Scroll to the form
+    formsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // Add form submission handling
+    const form = formContainer.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            handlePackageFormSubmit(event, packageName, packagePrice);
+        });
+    }
+}
+
+// Hide form function
+function hidePackageForm() {
+    const formsSection = document.getElementById('packagesFormSection');
+    formsSection.style.display = 'none';
+    
+    // Scroll back to appropriate section for better UX
+    const webDevSection = document.getElementById('web-dev');
+    const mobileAppsSection = document.getElementById('mobile-apps');
+    
+    // Default to web-dev section
+    if (webDevSection) {
+        webDevSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+// Handle form submission
+function handlePackageFormSubmit(event, packageName, packagePrice) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    // Add package metadata
+    formData.append('package', packageName);
+    formData.append('packagePrice', packagePrice);
+    formData.append('source', 'Service Packages Page');
+    formData.append('submittedAt', new Date().toISOString());
+    formData.append('userAgent', navigator.userAgent);
+    formData.append('referrer', document.referrer);
+    
+    // Collect checked features if they exist
+    const features = [];
+    form.querySelectorAll('input[name="features"]:checked').forEach(checkbox => {
+        features.push(checkbox.value);
+    });
+    if (features.length > 0) {
+        formData.append('selectedFeatures', features.join(', '));
+    }
+    
+    // Show loading state
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.disabled = true;
+    
+    // Submit to Formspree (using the same endpoint as FormUtils)
+    fetch('https://formspree.io/f/xgvlpqyr', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            showPackageThankYou();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showPackageError();
+    })
+    .finally(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
+}
+
+// Show thank you message
+function showPackageThankYou() {
+    const formsSection = document.getElementById('packagesFormSection');
+    const formContainer = formsSection.querySelector('.packages-form-container');
+    
+    formContainer.innerHTML = `
+        <div class="thank-you-container">
+            <div class="thank-you-icon">🎉</div>
+            <h2>Thank You for Your Inquiry!</h2>
+            <p class="thank-you-message">
+                We've received your project details and are excited to learn more about your needs.
+            </p>
+            <div class="what-happens-next">
+                <h3>What Happens Next?</h3>
+                <div class="timeline-steps">
+                    <div class="timeline-step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Within 24 hours</strong>
+                            <p>We'll review your requirements and send a detailed response</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Discovery Call</strong>
+                            <p>We'll schedule a call to discuss your project in detail</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Custom Proposal</strong>
+                            <p>You'll receive a tailored proposal with timeline and pricing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="contact-note">
+                Need immediate assistance? Email us at <strong>useinertia@gmail.com</strong>
+            </p>
+            <button class="btn btn-primary" onclick="hidePackageForm()">Got It</button>
+        </div>
+    `;
+}
+
+// Show error message
+function showPackageError() {
+    const formsSection = document.getElementById('packagesFormSection');
+    const formContainer = formsSection.querySelector('.packages-form-container');
+    
+    formContainer.innerHTML = `
+        <div class="error-container">
+            <div class="error-icon">😕</div>
+            <h2>Oops! Something Went Wrong</h2>
+            <p>We couldn't submit your form at this time. Please try again or contact us directly.</p>
+            <div class="error-actions">
+                <a href="mailto:useinertia@gmail.com" class="btn btn-primary">Email Us Directly</a>
+                <button class="btn btn-secondary" onclick="hidePackageForm()">Try Again</button>
+            </div>
+        </div>
+    `;
+}
+
+// Update project description placeholder based on project type
+function updateProjectFields(projectType) {
+    const descriptionField = document.getElementById('projectDescription');
+    if (!descriptionField) return;
+    
+    const placeholders = {
+        'new-website': 'Describe your business, target audience, and website goals',
+        'website-redesign': 'What do you want to improve about your current website?',
+        'ecommerce': 'What products will you sell? How many SKUs? Any special requirements?',
+        'web-app': 'Describe the application functionality and user workflows',
+        'mobile-app': 'What problem does your app solve? Who are your target users?',
+        'both': 'Describe both your website and mobile app requirements',
+        'custom-software': 'What business problem needs solving? What should the software do?',
+        'maintenance': 'What kind of support do you need? Current tech stack?',
+        'other': 'Please describe your project requirements in detail'
     };
     
-    FormUtils.showModal(formHTML);
-    
-    // Override the form handler to add our metadata
-    const form = document.querySelector('#formContent form');
-    form.removeEventListener('submit', FormUtils.handleFormSubmit);
-    form.addEventListener('submit', formDataHandler);
+    if (placeholders[projectType]) {
+        descriptionField.placeholder = placeholders[projectType];
+    }
 }
