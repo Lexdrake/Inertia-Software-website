@@ -565,23 +565,6 @@
             this.classList.toggle('active');
         });
         
-        // Debug: Check if style adaptation is working
-        window.addEventListener('load', function() {
-            console.log('=== Style Adaptation Debug ===');
-            console.log('layoutStyleDescriptions defined?', typeof layoutStyleDescriptions !== 'undefined');
-            console.log('initStyleAdaptation defined?', typeof initStyleAdaptation !== 'undefined');
-            console.log('Layout buttons found:', document.querySelectorAll('.layout-btn').length);
-            console.log('Style buttons found:', document.querySelectorAll('.style-btn').length);
-            console.log('Adaptive component:', !!document.getElementById('adaptiveComponent'));
-            
-            // Check if click handlers are attached
-            const testBtn = document.querySelector('.layout-btn');
-            if (testBtn) {
-                // Get event listeners (Note: this only works in Chrome DevTools)
-                console.log('First layout button:', testBtn);
-                console.log('Button dataset:', testBtn.dataset);
-            }
-        });
     </script>
 </body>
 </html>

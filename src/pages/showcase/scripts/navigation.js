@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initBreadcrumbNavigation();
     initFileTreeDemo();
     initDesignPlayground();
-    initStyleAdaptation();
     initWorkflowPreview();
 });
 

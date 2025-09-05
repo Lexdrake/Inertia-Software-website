@@ -189,7 +189,7 @@ function applyComponentStates(state) {
     }
 }
 
-// Style adaptation showcase - SIMPLIFIED TO MATCH OLD VERSION
+// Style adaptation showcase
 function initStyleAdaptation() {
     const styleButtons = document.querySelectorAll('.style-btn');
     const layoutButtons = document.querySelectorAll('.layout-btn');
@@ -198,7 +198,6 @@ function initStyleAdaptation() {
     
     // Check if elements exist
     if (!styleButtons.length || !layoutButtons.length || !adaptiveComponent || !adaptationDescription) {
-        console.warn('Style adaptation elements not found');
         return;
     }
     
@@ -326,8 +325,11 @@ function initWorkflowPreview() {
     });
 }
 
-// Add some additional interactive flourishes
+// Initialize style adaptation when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize style adaptation functionality
+    initStyleAdaptation();
+    
     // Animate workflow steps on load
     const workflowSteps = document.querySelectorAll('.workflow-step');
     workflowSteps.forEach((step, index) => {
