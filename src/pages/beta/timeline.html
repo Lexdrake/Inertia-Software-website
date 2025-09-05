@@ -970,6 +970,8 @@
         .milestone-details {
             border-top: 1px solid var(--border-color);
             background: var(--bg-light);
+            max-height: 500px;
+            overflow: hidden;
         }
         
         .details-tabs {
@@ -997,6 +999,9 @@
         .tab-content {
             display: none;
             padding: 2rem;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
         }
         
         .tab-content.active {
@@ -1032,12 +1037,16 @@
         }
         
         .architecture-note, .beta-note {
-            margin-top: 1.5rem;
-            padding: 1rem;
+            margin-top: 1rem;
+            padding: 0.8rem;
             background: #fff3cd;
             border: 1px solid #ffeaa7;
             border-radius: 6px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            clear: both;
+            box-sizing: border-box;
+            width: 100%;
         }
         
         .beta-note {
