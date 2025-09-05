@@ -929,15 +929,11 @@
 .style-buttons {
     display: flex;
     gap: 0.75rem;
-    flex-wrap: nowrap;
-    justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
 .layout-btn,
 .style-btn {
-    flex: 0 0 auto;
-    min-width: 120px;
     padding: 0.625rem 1.25rem;
     border: 2px solid var(--border-color);
     background: white;

@@ -189,19 +189,14 @@ function applyComponentStates(state) {
     }
 }
 
-// Style adaptation showcase
+// Style adaptation showcase - SIMPLIFIED TO MATCH OLD VERSION
 function initStyleAdaptation() {
-    // Check if layoutStyleDescriptions is available from style-descriptions.js
-    if (typeof layoutStyleDescriptions === 'undefined') {
-        console.error('layoutStyleDescriptions not found. Make sure style-descriptions.js is loaded before design-system.js');
-        return;
-    }
-    
     const styleButtons = document.querySelectorAll('.style-btn');
     const layoutButtons = document.querySelectorAll('.layout-btn');
     const adaptiveComponent = document.getElementById('adaptiveComponent');
     const adaptationDescription = document.getElementById('adaptationDescription');
     
+    // Check if elements exist
     if (!styleButtons.length || !layoutButtons.length || !adaptiveComponent || !adaptationDescription) {
         console.warn('Style adaptation elements not found');
         return;
@@ -209,9 +204,7 @@ function initStyleAdaptation() {
     
     // Initialize layout switching
     layoutButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            
+        btn.addEventListener('click', () => {
             const layout = btn.dataset.layout;
             
             // Update active button
@@ -222,19 +215,14 @@ function initStyleAdaptation() {
             switchLayout(layout);
             
             // Update description based on current style and new layout
-            const currentStyleBtn = document.querySelector('.style-btn.active');
-            if (currentStyleBtn) {
-                const currentStyle = currentStyleBtn.dataset.style;
-                updateDescription(currentStyle, layout);
-            }
+            const currentStyle = document.querySelector('.style-btn.active').dataset.style;
+            updateDescription(currentStyle, layout);
         });
     });
     
     // Initialize style switching
     styleButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            
+        btn.addEventListener('click', () => {
             const style = btn.dataset.style;
             
             // Update active button
@@ -245,19 +233,10 @@ function initStyleAdaptation() {
             applyStyleToLayout(style);
             
             // Update description based on new style and current layout
-            const currentLayoutBtn = document.querySelector('.layout-btn.active');
-            if (currentLayoutBtn) {
-                const currentLayout = currentLayoutBtn.dataset.layout;
-                updateDescription(style, currentLayout);
-            }
+            const currentLayout = document.querySelector('.layout-btn.active').dataset.layout;
+            updateDescription(style, currentLayout);
         });
     });
-    
-    // Initialize with current state
-    const initialStyle = document.querySelector('.style-btn.active')?.dataset.style || 'modern';
-    const initialLayout = document.querySelector('.layout-btn.active')?.dataset.layout || 'dashboard';
-    applyStyleToLayout(initialStyle);
-    updateDescription(initialStyle, initialLayout);
 }
 
 function switchLayout(targetLayout) {
@@ -319,7 +298,6 @@ function updateDescription(style, layout) {
         `;
     }
 }
-
 
 // Workflow preview interactions
 function initWorkflowPreview() {
