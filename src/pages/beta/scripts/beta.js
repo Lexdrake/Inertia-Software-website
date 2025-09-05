@@ -56,7 +56,7 @@ function createGeneralFeedbackForm() {
     return `
         <div class="form-header">
             <h3>💬 Share Your Thoughts</h3>
-            <p>Tell me what you think about the app - the good, the bad, and everything in between!</p>
+            <p>Tell us what you think about the app - the good, the bad, and everything in between!</p>
         </div>
         
         <form class="beta-form" data-form-type="general">
@@ -67,7 +67,7 @@ function createGeneralFeedbackForm() {
             
             <div class="form-group">
                 <label for="email">Email (optional)</label>
-                <input type="email" id="email" name="email" placeholder="In case I want to follow up">
+                <input type="email" id="email" name="email" placeholder="In case we want to follow up">
             </div>
             
             <div class="form-group">
@@ -109,7 +109,7 @@ function createBugReportForm() {
     return `
         <div class="form-header">
             <h3>🐛 Bug Report</h3>
-            <p>Help me squash this bug! The more details you can provide, the easier it'll be to fix.</p>
+            <p>Help us squash this bug! The more details you can provide, the easier it'll be to fix.</p>
         </div>
         
         <form class="beta-form" data-form-type="bug">
@@ -120,7 +120,7 @@ function createBugReportForm() {
             
             <div class="form-group">
                 <label for="email">Email (optional)</label>
-                <input type="email" id="email" name="email" placeholder="In case I need more details">
+                <input type="email" id="email" name="email" placeholder="In case we need more details">
             </div>
             
             <div class="form-group">
@@ -166,7 +166,7 @@ function createFeatureRequestForm() {
     return `
         <div class="form-header">
             <h3>💡 Feature Idea</h3>
-            <p>Got an idea that would make the app more useful? I'd love to hear it!</p>
+            <p>Got an idea that would make the app more useful? We'd love to hear it!</p>
         </div>
         
         <form class="beta-form" data-form-type="feature">
@@ -177,7 +177,7 @@ function createFeatureRequestForm() {
             
             <div class="form-group">
                 <label for="email">Email (optional)</label>
-                <input type="email" id="email" name="email" placeholder="In case I want to discuss the idea">
+                <input type="email" id="email" name="email" placeholder="In case we want to discuss the idea">
             </div>
             
             <div class="form-group">
@@ -203,7 +203,7 @@ function createFeatureRequestForm() {
             
             <div class="form-group">
                 <label for="how-you-imagine">How Do You Imagine It Working?</label>
-                <textarea id="how-you-imagine" name="how-you-imagine" rows="4" placeholder="Walk me through how you think this feature should work. Where would you find it? How would you use it?"></textarea>
+                <textarea id="how-you-imagine" name="how-you-imagine" rows="4" placeholder="Walk us through how you think this feature should work. Where would you find it? How would you use it?"></textarea>
             </div>
             
             <div class="form-group">
@@ -473,7 +473,7 @@ function showErrorMessage() {
         <div class="error-message">
             <div class="error-icon">😅</div>
             <h3>Oops, something went wrong!</h3>
-            <p>The form didn't submit properly. No worries though - you can just email me directly instead!</p>
+            <p>The form didn't submit properly. No worries though - you can just email us directly instead!</p>
             <a href="mailto:useinertia@gmail.com" class="btn btn-primary">Send Email</a>
             <button class="btn btn-secondary" onclick="hideForm()">Try Again</button>
         </div>
@@ -488,7 +488,7 @@ function showAgreementErrorMessage() {
         <div class="error-message">
             <div class="error-icon">😅</div>
             <h3>Oops, something went wrong!</h3>
-            <p>The agreement form didn't submit properly. No worries though - you can just email me directly instead!</p>
+            <p>The agreement form didn't submit properly. No worries though - you can just email us directly instead!</p>
             <a href="mailto:useinertia@gmail.com" class="btn btn-primary">Send Email</a>
             <button class="btn btn-secondary" onclick="hideAgreementForm()">Try Again</button>
         </div>
@@ -545,8 +545,8 @@ function showThankYouMessage(formType) {
         <div class="thank-you-message">
             <div class="thank-you-icon">${message}</div>
             <h3>Got it!</h3>
-            <p>Thanks for taking the time to share that with me. I read every single submission and really appreciate your help making this app better.</p>
-            <p>I'll get back to you if I have any questions or updates!</p>
+            <p>Thanks for taking the time to share that with us. We read every single submission and really appreciate your help making this app better.</p>
+            <p>We'll get back to you if we have any questions or updates!</p>
             <button class="btn btn-primary" onclick="hideForm()">Done</button>
         </div>
     `;

@@ -41,6 +41,14 @@ const FormUtils = {
         const modal = document.getElementById('serviceFormModal');
         if (modal) {
             modal.style.display = 'none';
+            
+            // If we're on the home page and the form was opened from services section, scroll back
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                const servicesSection = document.getElementById('services');
+                if (servicesSection) {
+                    servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
         }
     },
     

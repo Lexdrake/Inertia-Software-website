@@ -17,24 +17,24 @@ function replaceEmailLinksWithFormTriggers() {
             const packagePrice = packageCard.querySelector('.package-price').textContent;
             
             // Convert to button and add click handler
-            button.removeAttribute('href');
+            button.href = '#';
             button.style.cursor = 'pointer';
-            button.onclick = (e) => {
+            button.addEventListener('click', function(e) {
                 e.preventDefault();
                 showPackageForm(packageName, packagePrice);
-            };
+            });
         }
     });
     
     // Also handle the custom solutions button
     const customButton = document.querySelector('.custom-content .btn-primary');
     if (customButton && customButton.href && customButton.href.includes('mailto:')) {
-        customButton.removeAttribute('href');
+        customButton.href = '#';
         customButton.style.cursor = 'pointer';
-        customButton.onclick = (e) => {
+        customButton.addEventListener('click', function(e) {
             e.preventDefault();
             showPackageForm('Custom Solution', 'Custom Pricing');
-        };
+        });
     }
 }
 
