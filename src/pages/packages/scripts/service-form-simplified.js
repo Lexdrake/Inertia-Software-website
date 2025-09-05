@@ -1,40 +1,63 @@
 // Simplified Packages Service Form - Uses shared utilities
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Replace all email links with form triggers
-    replaceEmailLinksWithFormTriggers();
+    // Ensure FormUtils is available before proceeding
+    if (typeof window.FormUtils === 'undefined') {
+        // Try again after a short delay to ensure FormUtils is loaded
+        setTimeout(function() {
+            replaceEmailLinksWithFormTriggers();
+        }, 100);
+    } else {
+        // Replace all email links with form triggers
+        replaceEmailLinksWithFormTriggers();
+    }
 });
 
 function replaceEmailLinksWithFormTriggers() {
     // Find all package "Get Started" buttons
     const packageButtons = document.querySelectorAll('.package-card .btn-primary');
     
-    packageButtons.forEach(button => {
+    packageButtons.forEach((button) => {
         if (button.href && button.href.includes('mailto:')) {
             // Get package info from the card
             const packageCard = button.closest('.package-card');
             const packageName = packageCard.querySelector('h3').textContent;
             const packagePrice = packageCard.querySelector('.package-price').textContent;
             
-            // Convert to button and add click handler
-            button.href = '#';
-            button.style.cursor = 'pointer';
-            button.addEventListener('click', function(e) {
+            // Create a new button element to replace the anchor
+            const newButton = document.createElement('button');
+            newButton.className = button.className;
+            newButton.textContent = button.textContent;
+            newButton.type = 'button';
+            
+            // Add click handler to the new button
+            newButton.addEventListener('click', function(e) {
                 e.preventDefault();
                 showPackageForm(packageName, packagePrice);
             });
+            
+            // Replace the anchor with the button
+            button.parentNode.replaceChild(newButton, button);
         }
     });
     
     // Also handle the custom solutions button
     const customButton = document.querySelector('.custom-content .btn-primary');
     if (customButton && customButton.href && customButton.href.includes('mailto:')) {
-        customButton.href = '#';
-        customButton.style.cursor = 'pointer';
-        customButton.addEventListener('click', function(e) {
+        // Create a new button element to replace the anchor
+        const newCustomButton = document.createElement('button');
+        newCustomButton.className = customButton.className;
+        newCustomButton.textContent = customButton.textContent;
+        newCustomButton.type = 'button';
+        
+        // Add click handler to the new button
+        newCustomButton.addEventListener('click', function(e) {
             e.preventDefault();
             showPackageForm('Custom Solution', 'Custom Pricing');
         });
+        
+        // Replace the anchor with the button
+        customButton.parentNode.replaceChild(newCustomButton, customButton);
     }
 }
 

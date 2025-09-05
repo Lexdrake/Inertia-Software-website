@@ -119,11 +119,16 @@
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    min-height: 500px;
+    height: 500px; /* Fixed height for desktop */
+}
+
+.tablet-frame .device-screen {
+    height: 700px; /* Fixed height for tablet */
+    border-radius: 18px;
 }
 
 .mobile-frame .device-screen {
-    min-height: 600px;
+    height: 600px; /* Fixed height for mobile */
     border-radius: 15px;
 }
 
@@ -131,6 +136,8 @@
 .mockup-content {
     display: none;
     animation: fadeIn 0.5s ease;
+    position: relative;
+    height: 100%;
 }
 
 .mockup-content.active {
