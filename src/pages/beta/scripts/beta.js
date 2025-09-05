@@ -257,7 +257,7 @@ function showErrorMessage() {
             <div class="error-icon">😅</div>
             <h3>Oops, something went wrong!</h3>
             <p>The form didn't submit properly. No worries though - you can just email me directly instead!</p>
-            <a href="mailto:kylerwootten@gmail.com" class="btn btn-primary">Email Kyler</a>
+            <a href="mailto:useinertia@gmail.com" class="btn btn-primary">Send Email</a>
             <button class="btn btn-secondary" onclick="hideForm()">Try Again</button>
         </div>
     `;
