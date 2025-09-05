@@ -196,18 +196,15 @@ function initStyleAdaptation() {
     const adaptiveComponent = document.getElementById('adaptiveComponent');
     const adaptationDescription = document.getElementById('adaptationDescription');
     
-    // Debug logging
-    console.log('InitStyleAdaptation called');
-    console.log('Style buttons found:', styleButtons.length);
-    console.log('Layout buttons found:', layoutButtons.length);
-    console.log('Adaptive component found:', !!adaptiveComponent);
-    console.log('Adaptation description found:', !!adaptationDescription);
+    if (!styleButtons.length || !layoutButtons.length || !adaptiveComponent || !adaptationDescription) {
+        console.warn('Style adaptation elements not found');
+        return;
+    }
     
     // Initialize layout switching
     layoutButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log('Layout button clicked:', btn.dataset.layout);
             
             const layout = btn.dataset.layout;
             
@@ -231,7 +228,6 @@ function initStyleAdaptation() {
     styleButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            console.log('Style button clicked:', btn.dataset.style);
             
             const style = btn.dataset.style;
             
@@ -250,6 +246,12 @@ function initStyleAdaptation() {
             }
         });
     });
+    
+    // Initialize with current state
+    const initialStyle = document.querySelector('.style-btn.active')?.dataset.style || 'modern';
+    const initialLayout = document.querySelector('.layout-btn.active')?.dataset.layout || 'dashboard';
+    applyStyleToLayout(initialStyle);
+    updateDescription(initialStyle, initialLayout);
 }
 
 function switchLayout(targetLayout) {
