@@ -207,17 +207,91 @@
                 <div class="service-card">
                     <h3>Mobile App Development</h3>
                     <p>Native and cross-platform mobile applications built with modern frameworks and best practices for iOS and Android.</p>
-                    <a href="/src/pages/packages/#mobile-apps" class="btn btn-primary">View Packages</a>
+                    <a href="/src/pages/packages/" class="btn btn-primary">View Packages</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" id="customSoftwareCard">
                     <h3>Custom Software Solutions</h3>
                     <p>Tailored software development to meet your specific business needs, from concept to deployment and maintenance.</p>
-                    <a href="/src/pages/packages/#custom" class="btn btn-primary">Get Quote</a>
+                    <button class="btn btn-primary" onclick="showQuoteForm()">Get Quote</button>
+                    
+                    <div class="quote-form-container" id="quoteFormContainer" style="display: none;">
+                        <div class="form-content">
+                            <div class="form-header">
+                                <h4>💼 Custom Software Quote</h4>
+                                <p>Tell us about your project and we'll provide a detailed proposal</p>
+                            </div>
+                            
+                            <form class="quote-form" id="quoteForm">
+                                <div class="form-group">
+                                    <label for="company-name">Company/Organization</label>
+                                    <input type="text" id="company-name" name="company-name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-name">Your Name</label>
+                                    <input type="text" id="contact-name" name="contact-name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-email">Email</label>
+                                    <input type="email" id="contact-email" name="contact-email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="project-type">Project Type</label>
+                                    <select id="project-type" name="project-type" required>
+                                        <option value="">Select project type</option>
+                                        <option value="web-application">Web Application</option>
+                                        <option value="mobile-app">Mobile Application</option>
+                                        <option value="desktop-software">Desktop Software</option>
+                                        <option value="api-backend">API/Backend Service</option>
+                                        <option value="automation-tool">Automation Tool</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="project-description">Project Description</label>
+                                    <textarea id="project-description" name="project-description" rows="4" placeholder="Describe what you want built, key features, and any specific requirements" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="timeline">Desired Timeline</label>
+                                    <select id="timeline" name="timeline" required>
+                                        <option value="">When do you need this completed?</option>
+                                        <option value="asap">As soon as possible</option>
+                                        <option value="1-2-months">1-2 months</option>
+                                        <option value="3-6-months">3-6 months</option>
+                                        <option value="6-12-months">6-12 months</option>
+                                        <option value="flexible">Timeline is flexible</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="budget-range">Budget Range</label>
+                                    <select id="budget-range" name="budget-range" required>
+                                        <option value="">Estimated budget range</option>
+                                        <option value="under-10k">Under $10,000</option>
+                                        <option value="10k-25k">$10,000 - $25,000</option>
+                                        <option value="25k-50k">$25,000 - $50,000</option>
+                                        <option value="50k-100k">$50,000 - $100,000</option>
+                                        <option value="over-100k">Over $100,000</option>
+                                        <option value="not-sure">Not sure yet</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Request Quote</button>
+                                    <button type="button" class="btn btn-secondary" onclick="hideQuoteForm()">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="service-card">
                     <h3>Website Development</h3>
                     <p>Modern, responsive websites built with clean code, optimized performance, and user-focused design principles.</p>
-                    <a href="/src/pages/packages/#web-dev" class="btn btn-primary">View Packages</a>
+                    <a href="/src/pages/packages/" class="btn btn-primary">View Packages</a>
                 </div>
             </div>
         </div>
@@ -348,6 +422,94 @@
                 }
             });
         });
+
+        // Quote form functionality
+        function showQuoteForm() {
+            const formContainer = document.getElementById('quoteFormContainer');
+            formContainer.style.display = 'block';
+            setTimeout(() => {
+                formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        function hideQuoteForm() {
+            const formContainer = document.getElementById('quoteFormContainer');
+            formContainer.style.display = 'none';
+        }
+
+        // Handle quote form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Add form type and timestamp
+            formData.append('form-type', 'custom-software-quote');
+            formData.append('timestamp', new Date().toISOString());
+            
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Submit to Formspree
+            fetch('https://formspree.io/f/myzdbnab', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showQuoteThankYou();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showQuoteError();
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+
+        function showQuoteThankYou() {
+            const formContainer = document.getElementById('quoteFormContainer');
+            const formContent = formContainer.querySelector('.form-content');
+            
+            formContent.innerHTML = `
+                <div class="thank-you-message" style="text-align: center; padding: 2rem;">
+                    <div class="thank-you-icon" style="font-size: 3rem; margin-bottom: 1rem;">💼✨</div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 1rem; font-size: 1.5rem;">Quote Request Received!</h3>
+                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1rem;">Thanks for reaching out! We'll review your project requirements and get back to you with a detailed proposal within 1-2 business days.</p>
+                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 2rem;">Feel free to email us directly at <a href="mailto:useinertia@gmail.com" style="color: var(--primary-color);">useinertia@gmail.com</a> if you have any questions.</p>
+                    <button class="btn btn-primary" onclick="hideQuoteForm()">Done</button>
+                </div>
+            `;
+        }
+
+        function showQuoteError() {
+            const formContainer = document.getElementById('quoteFormContainer');
+            const formContent = formContainer.querySelector('.form-content');
+            
+            formContent.innerHTML = `
+                <div class="error-message" style="text-align: center; padding: 2rem;">
+                    <div class="error-icon" style="font-size: 3rem; margin-bottom: 1rem;">😅</div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 1rem; font-size: 1.5rem;">Oops, something went wrong!</h3>
+                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 2rem;">The form didn't submit properly. No worries though - you can email us directly instead!</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="mailto:useinertia@gmail.com?subject=Custom Software Quote Request" class="btn btn-primary">Send Email</a>
+                        <button class="btn btn-secondary" onclick="hideQuoteForm()">Try Again</button>
+                    </div>
+                </div>
+            `;
+        }
     </script>
     <script src="scripts/shared/form-utils.js"></script>
     <script src="scripts/service-form-simplified.js"></script>
