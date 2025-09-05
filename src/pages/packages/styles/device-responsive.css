@@ -36,14 +36,12 @@
 /* Mobile dropdown menu simulation */
 .mobile-frame .mock-mobile-nav {
     display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    position: relative; /* Changed from absolute to relative */
     background: white;
     border-bottom: 1px solid #e0e0e0;
     padding: 1rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 0; /* Remove any top positioning */
 }
 
 .mobile-frame .mock-mobile-nav span {
