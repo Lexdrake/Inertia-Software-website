@@ -2,15 +2,15 @@
 
 .mockup-showcase {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: white;
 }
 
 .mockup-showcase .section-header h2 {
-    color: white;
+    color: var(--text-dark);
 }
 
 .mockup-showcase .section-header p {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-light);
 }
 
 .showcase-tabs {
@@ -27,9 +27,9 @@
 
 .tab-btn {
     padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid transparent;
+    background: var(--background-alt);
+    color: var(--text-dark);
+    border: 2px solid var(--border-color);
     border-radius: 30px;
     font-size: 1rem;
     font-weight: 600;
@@ -38,12 +38,15 @@
 }
 
 .tab-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 .tab-btn.active {
-    background: white;
-    color: #667eea;
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 .tab-content {
@@ -64,9 +67,9 @@
 
 .tier-btn {
     padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--background-alt);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     font-size: 0.9rem;
     cursor: pointer;
@@ -74,13 +77,16 @@
 }
 
 .tier-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    border-color: var(--primary-color);
 }
 
 .tier-btn.active {
-    background: rgba(255, 255, 255, 0.95);
-    color: #667eea;
+    background: var(--primary-color);
+    color: white;
     font-weight: 600;
+    border-color: var(--primary-color);
 }
 
 /* Device Frames */
@@ -162,21 +168,24 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid transparent;
+    background: var(--background-alt);
+    color: var(--text-dark);
+    border: 2px solid var(--border-color);
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s;
 }
 
 .device-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 .device-btn.active {
-    background: white;
-    color: #667eea;
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 .device-btn svg {
@@ -187,8 +196,9 @@
 .showcase-features {
     margin-top: 3rem;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--background-alt);
     border-radius: 15px;
+    border: 1px solid var(--border-color);
 }
 
 .feature-highlight {
@@ -196,7 +206,7 @@
 }
 
 .feature-highlight h3 {
-    color: white;
+    color: var(--text-dark);
     margin-bottom: 1.5rem;
 }
 

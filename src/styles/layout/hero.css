@@ -29,10 +29,6 @@
     color: var(--text-dark);
     margin-bottom: 1.5rem;
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--text-dark), color-mix(in srgb, var(--text-dark) 50%, var(--primary-color) 50%));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
