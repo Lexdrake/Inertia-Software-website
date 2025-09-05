@@ -10,7 +10,7 @@ function showAgreementForm() {
     formContainer.innerHTML = createBetaAgreementForm();
     
     // Scroll to the form
-    agreementFormSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    agreementFormSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
     
     // Add form submission handling
     const form = formContainer.querySelector('form');
@@ -240,14 +240,6 @@ function createBetaAgreementForm() {
                     <input type="email" id="email-address" name="email-address" required>
                 </div>
                 
-                <div class="form-group">
-                    <label for="contact-method">Preferred Contact Method</label>
-                    <select id="contact-method" name="contact-method">
-                        <option value="email">Email</option>
-                        <option value="phone">Phone (if provided)</option>
-                        <option value="either">Either</option>
-                    </select>
-                </div>
             </div>
 
             <!-- Section 2: Technical Details -->
@@ -520,9 +512,16 @@ function showAgreementThankYouMessage() {
                 <li>Share your feedback using the forms below</li>
             </ul>
             <p>We're excited to have you on board and can't wait to hear your thoughts!</p>
-            <button class="btn btn-primary" onclick="hideAgreementForm()">Get Started</button>
+            <p style="margin-top: 1.5rem; color: #6b7280; font-size: 0.9rem;">
+                <em>You can close this message by refreshing the page, or leave it open as a reference.</em>
+            </p>
         </div>
     `;
+    
+    // Scroll to the thank you message
+    setTimeout(() => {
+        formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
 }
 
 function showThankYouMessage(formType) {

@@ -1,8 +1,0 @@
-{
-  "name": "inertia-website",
-  "version": "1.0.0",
-  "description": "Inertia Software website with beta testing automation",
-  "dependencies": {
-    "googleapis": "^127.0.0"
-  }
-}
